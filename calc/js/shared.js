@@ -2,14 +2,14 @@ var paramnames = ["speed", "stamina", "power", "guts", "smart"];
 
 //シリアライズ用にname設定
 $(document).ready(() => {
-    for (let i = 0; i < $("*").length; i++) {
-        const element = $("*")[i];
-        let id = element.getAttribute("id");
+    $("*").each((i, e) => {
+        let id = e.getAttribute("id");
 
-        if (element.getAttribute("id") != null) {
-            element.setAttribute("name", id);
+        if (e.getAttribute("id") != null) {
+            e.setAttribute("name", id);
         }
-    }
+    });
+
     refresh();
 });
 
@@ -36,7 +36,7 @@ $("#load").on("click", () => {
 
     json.forEach((pair) => {
         //name と id は一致させている
-        $("#" + pair.name).val(pair["value"]);
+        $("#" + pair.name).val(pair.value);
     });
 
     refresh();
@@ -46,9 +46,9 @@ function refresh() {
     var totalscore = 0;
 
     //ステータス計算
-    paramnames.forEach((p) => {
-        let score = calcScore($("#" + p).val());
-        $("#" + p + "score").html(score);
+    $(".param").each((i, e) => {
+        let score = calcScore($("#" + e.id).val());
+        $("#" + e.name + "score").html(score);
         totalscore += score;
     });
 
@@ -58,9 +58,10 @@ function refresh() {
     totalscore += koyuscore;
 
     //スキル計算
-    skillnames.forEach((s) => {
-        let score = $("#" + s + "perscore").val() * $("#" + s + "count").val();
-        $("#" + s + "score").html(score);
+    $(".skillcount").each((i, e) => {
+        let label = e.id.slice(0, -5);  //e.g. skillkencount
+        let score = $("#" + label + "perscore").val() * $("#" + label + "count").val();
+        $("#" + label + "score").html(score);
         totalscore += score;
     });
 
