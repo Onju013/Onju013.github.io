@@ -12,19 +12,17 @@ $(document).ready(() => {
 });
 
 $("input").on("change", (event) => {
-    if (event.target.type == "number") {
-        let value = Number(event.target.value);
+    let target = event.target;
+    if (target.type == "number") {
+        let value = Number(target.value);
 
-        if (event.target.max != null && value > Number(event.target.max)) {
-            value = event.target.max;
-        } else if (
-            event.target.min != null &&
-            value < Number(event.target.min)
-        ) {
-            value = event.target.min;
+        if (target.max != null && value > Number(target.max)) {
+            value = target.max;
+        } else if (target.min != null && value < Number(target.min)) {
+            value = target.min;
         }
 
-        event.target.value = value;
+        target.value = value;
     }
 
     refresh();
