@@ -1,5 +1,3 @@
-var paramnames = ["speed", "stamina", "power", "guts", "smart"];
-
 //シリアライズ用にname設定
 $(document).ready(() => {
     $("*").each((i, e) => {
@@ -13,7 +11,22 @@ $(document).ready(() => {
     refresh();
 });
 
-$("input").on("change", () => {
+$("input").on("change", (event) => {
+    if (event.target.type == "number") {
+        let value = Number(event.target.value);
+
+        if (event.target.max != null && value > Number(event.target.max)) {
+            value = event.target.max;
+        } else if (
+            event.target.min != null &&
+            value < Number(event.target.min)
+        ) {
+            value = event.target.min;
+        }
+
+        event.target.value = value;
+    }
+
     refresh();
 });
 
@@ -59,8 +72,9 @@ function refresh() {
 
     //スキル計算
     $(".skillcount").each((i, e) => {
-        let label = e.id.slice(0, -5);  //e.g. skillkencount
-        let score = $("#" + label + "perscore").val() * $("#" + label + "count").val();
+        let label = e.id.slice(0, -5); //e.g. skillkencount
+        let score =
+            $("#" + label + "perscore").val() * $("#" + label + "count").val();
         $("#" + label + "score").html(score);
         totalscore += score;
     });
