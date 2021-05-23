@@ -1,3 +1,78 @@
+var paramnames = ["speed", "stamina", "power", "guts", "smart"];
+
+//シリアライズ用にname設定
+$(document).ready(() => {
+    for (let i = 0; i < $("*").length; i++) {
+        const element = $("*")[i];
+        let id = element.getAttribute("id");
+
+        if (element.getAttribute("id") != null) {
+            element.setAttribute("name", id);
+        }
+    }
+    refresh();
+});
+
+$("input").on("change", () => {
+    refresh();
+});
+
+$("input").on("keyup", () => {
+    refresh();
+});
+
+$("select").on("change", () => {
+    refresh();
+});
+
+$("#save").on("click", () => {
+    let s = $("form").serializeArray();
+    let json = JSON.stringify(s);
+    $("#savestr").val(json);
+});
+
+$("#load").on("click", () => {
+    let json = JSON.parse($("#savestr").val());
+
+    json.forEach((pair) => {
+        //name と id は一致させている
+        $("#" + pair.name).val(pair["value"]);
+    });
+
+    refresh();
+});
+
+function refresh() {
+    var totalscore = 0;
+
+    //ステータス計算
+    paramnames.forEach((p) => {
+        let score = calcScore($("#" + p).val());
+        $("#" + p + "score").html(score);
+        totalscore += score;
+    });
+
+    //固有スキル計算
+    let koyuscore = $("#sainou").val() * $("#skillkoyulevel").val();
+    $("#skillkoyuscore").html(koyuscore);
+    totalscore += koyuscore;
+
+    //スキル計算
+    skillnames.forEach((s) => {
+        let score = $("#" + s + "perscore").val() * $("#" + s + "count").val();
+        $("#" + s + "score").html(score);
+        totalscore += score;
+    });
+
+    //ランク
+    let rank = "";
+
+    if (totalscore <= 8199) rank = "余り " + (8199 - totalscore);
+    else rank = '<font color="red">超過</font> ' + (totalscore - 8199);
+
+    $("#result").html(totalscore + "（" + rank + "）");
+}
+
 function calcScore(param) {
     let x = [0.5, 0.26];
 
