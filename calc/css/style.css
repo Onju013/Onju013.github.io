@@ -1,8 +1,21 @@
 @charset "UTF-8";
+
 .param {
     width: 50px;
 }
-.skillscore
-{
+
+.skillscore {
     text-align: right;
+}
+
+tr.redskill {
+    background-color: #ffa0a0;
+}
+
+tr.goldskill {
+    background-color: #ffffa0;
+}
+
+tr.greenskill {
+    background-color: #a0ffa0;
 }

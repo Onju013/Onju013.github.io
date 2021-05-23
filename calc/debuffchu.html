@@ -11,7 +11,9 @@
         <style type="text/css"></style>
     </head>
     <body bgcolor="#F0F0F0">
-        <font size="+2pt"><b>オープンリーグデバフ役ウマ娘評価計算機（主に中距離用）</b></font>
+        <font size="+2pt"
+            ><b>オープンリーグウマ娘評価計算機（中距離デバフ用）</b></font
+        >
         <br />
         <form>
             <table>
@@ -132,10 +134,9 @@
                     <th>スキル（スキル条件に合った適正がA～S）</th>
                     <th>取得数</th>
                     <th>個別評価</th>
-                    <th>備考</th>
                 </tr>
                 <tr>
-                    <td>固有スキル（180）</td>
+                    <td>他ウマ娘の固有スキル（180）</td>
                     <td>
                         <input
                             type="number"
@@ -156,9 +157,8 @@
                     <td>
                         <div id="skillkoyukeiscore" class="skillscore">0</div>
                     </td>
-                    <td>他ウマ娘の固有</td>
                 </tr>
-                <tr>
+                <tr class="redskill">
                     <td>～～駆け引き（174）</td>
                     <td>
                         <input
@@ -179,7 +179,7 @@
                     </td>
                     <td><div id="skillkakescore" class="skillscore">0</div></td>
                 </tr>
-                <tr>
+                <tr class="redskill">
                     <td>～～けん制・焦り・ためらい（217）</td>
                     <td>
                         <input
@@ -199,9 +199,8 @@
                         個
                     </td>
                     <td><div id="skillkenscore" class="skillscore">0</div></td>
-                    <td></td>
                 </tr>
-                <tr>
+                <tr class="redskill">
                     <td>トリック（217）</td>
                     <td>
                         <input
@@ -221,9 +220,8 @@
                         個
                     </td>
                     <td><div id="skilltriscore" class="skillscore">0</div></td>
-                    <td></td>
                 </tr>
-                <tr>
+                <tr class="redskill">
                     <td>束縛・ささやき・鋭い眼光（239）</td>
                     <td>
                         <input
@@ -243,9 +241,8 @@
                         個
                     </td>
                     <td><div id="skillsokuscore" class="skillscore">0</div></td>
-                    <td>布石やスピードイーター等も239</td>
                 </tr>
-                <tr bgcolor="#F0F030">
+                <tr class="goldskill">
                     <td>独占力・魅惑のささやき・八方にらみ（559）</td>
                     <td>
                         <input
@@ -265,9 +262,8 @@
                         個
                     </td>
                     <td><div id="skilldokuscore" class="skillscore">0</div></td>
-                    <td>金スキル</td>
                 </tr>
-                <tr>
+                <tr class="redskill">
                     <td>かく乱（94）</td>
                     <td>
                         <input
@@ -287,9 +283,8 @@
                         個
                     </td>
                     <td><div id="skillkakuscore" class="skillscore">0</div></td>
-                    <td></td>
                 </tr>
-                <tr bgcolor="#F0F030">
+                <tr class="goldskill">
                     <td>幻惑のかく乱（367）</td>
                     <td>
                         <input
@@ -309,9 +304,8 @@
                         個
                     </td>
                     <td><div id="skillgenscore" class="skillscore">0</div></td>
-                    <td>金スキル</td>
                 </tr>
-                <tr bgcolor="#80FF80">
+                <tr class="greenskill">
                     <td>～～のコツ○（191）</td>
                     <td>
                         <input
@@ -333,9 +327,8 @@
                     <td>
                         <div id="skillkotsu1score" class="skillscore">0</div>
                     </td>
-                    <td></td>
                 </tr>
-                <tr bgcolor="#80FF80">
+                <tr class="greenskill">
                     <td>～～のコツ◎（239）</td>
                     <td>
                         <input
@@ -357,7 +350,6 @@
                     <td>
                         <div id="skillkotsu2score" class="skillscore">0</div>
                     </td>
-                    <td></td>
                 </tr>
             </table>
         </form>
@@ -374,9 +366,9 @@
                 </td>
             </tr>
         </table>
-        保存用文字列（セーブを押して表示される文字列を保存しておけば後で読み込める）
+        保存用文字列（セーブを押して表示される文字列を保存しておけば復元できる）
         <br />
-        <input type="text" id="savestr" size="80" />
+        <input type="text" id="savestr" size="60" />
         <br />
         <button id="save" style="margin-right: 15pt">セーブ</button>
         <button id="load">ロード</button>
