@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Onju" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>ウマ娘評価値計算機 for オープンリーグデバフ役</title>
+
+        <style type="text/css"></style>
+    </head>
+    <body bgcolor="#F0F0F0">
+        <font size="+2pt"><b>オープンリーグデバフ役ウマ娘評価計算機（主に中距離用）</b></font>
+        <br />
+        <form>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>スピード</th>
+                    <th>スタミナ</th>
+                    <th>パワー</th>
+                    <th>根性</th>
+                    <th>賢さ</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input
+                            type="number"
+                            name="speed"
+                            id="speed"
+                            value="1"
+                            class="param"
+                            step="1"
+                            min="1"
+                            max="1200"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            id="stamina"
+                            name="stamina"
+                            value="1"
+                            class="param"
+                            step="1"
+                            min="1"
+                            max="1200"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            id="power"
+                            name="power"
+                            value="1"
+                            class="param"
+                            step="1"
+                            min="1"
+                            max="1200"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            id="guts"
+                            name="guts"
+                            value="1"
+                            class="param"
+                            step="1"
+                            min="1"
+                            max="1200"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            id="smart"
+                            name="smart"
+                            value="1"
+                            class="param"
+                            step="1"
+                            min="1"
+                            max="1200"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>個別評価</td>
+                    <td><div id="speedscore" class="paramscore">1</div></td>
+                    <td><div id="staminascore" class="paramscore">1</div></td>
+                    <td><div id="powerscore" class="paramscore">1</div></td>
+                    <td><div id="gutsscore" class="paramscore">1</div></td>
+                    <td><div id="smartscore" class="paramscore">1</div></td>
+                </tr>
+            </table>
+
+            <br />
+            <table>
+                <tr>
+                    <td>才能</td>
+                    <td>
+                        <select id="sainou">
+                            <option value="120">下位（★～★★）</option>
+                            <option selected value="170">上位（★★★～）</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>固有スキルレベル</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkoyulevel"
+                            step="1"
+                            min="1"
+                            max="6"
+                            value="4"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>個別評価</td>
+                    <td><div id="skillkoyuscore">680</div></td>
+                </tr>
+            </table>
+
+            <br /><br />
+            <table>
+                <tr>
+                    <th>スキル（スキル条件に合った適正がA～S）</th>
+                    <th>取得数</th>
+                    <th>個別評価</th>
+                    <th>備考</th>
+                </tr>
+                <tr>
+                    <td>固有スキル（180）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkoyukeicount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="180"
+                            id="skillkoyukeiperscore"
+                        />
+                        個
+                    </td>
+                    <td>
+                        <div id="skillkoyukeiscore" class="skillscore">0</div>
+                    </td>
+                    <td>他ウマ娘の固有</td>
+                </tr>
+                <tr>
+                    <td>～～駆け引き（174）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkakecount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="174"
+                            id="skillkakeperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skillkakescore" class="skillscore">0</div></td>
+                </tr>
+                <tr>
+                    <td>～～けん制・焦り・ためらい（217）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkencount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="217"
+                            id="skillkenperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skillkenscore" class="skillscore">0</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>トリック（217）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skilltricount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="217"
+                            id="skilltriperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skilltriscore" class="skillscore">0</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>束縛・ささやき・鋭い眼光（239）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillsokucount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="239"
+                            id="skillsokuperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skillsokuscore" class="skillscore">0</div></td>
+                    <td>布石やスピードイーター等も239</td>
+                </tr>
+                <tr bgcolor="#F0F030">
+                    <td>独占力・魅惑のささやき・八方にらみ（559）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skilldokucount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="559"
+                            id="skilldokuperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skilldokuscore" class="skillscore">0</div></td>
+                    <td>金スキル</td>
+                </tr>
+                <tr>
+                    <td>かく乱（94）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkakucount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="94"
+                            id="skillkakuperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skillkakuscore" class="skillscore">0</div></td>
+                    <td></td>
+                </tr>
+                <tr bgcolor="#F0F030">
+                    <td>幻惑のかく乱（367）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillgencount"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="367"
+                            id="skillgenperscore"
+                        />
+                        個
+                    </td>
+                    <td><div id="skillgenscore" class="skillscore">0</div></td>
+                    <td>金スキル</td>
+                </tr>
+                <tr bgcolor="#80FF80">
+                    <td>～～のコツ○（191）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkotsu1count"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="191"
+                            id="skillkotsu1perscore"
+                        />
+                        個
+                    </td>
+                    <td>
+                        <div id="skillkotsu1score" class="skillscore">0</div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr bgcolor="#80FF80">
+                    <td>～～のコツ◎（239）</td>
+                    <td>
+                        <input
+                            type="number"
+                            id="skillkotsu2count"
+                            value="0"
+                            class="skillcount"
+                            step="1"
+                            min="0"
+                            max="50"
+                        />
+                        <input
+                            type="hidden"
+                            value="239"
+                            id="skillkotsu2perscore"
+                        />
+                        個
+                    </td>
+                    <td>
+                        <div id="skillkotsu2score" class="skillscore">0</div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+        <br />
+        <table>
+            <tr>
+                <td>評価点</td>
+                <td>
+                    <font size="24"> <div id="result">5</div></font>
+                </td>
+                <td>
+                    <div id="rank"></div>
+                </td>
+            </tr>
+        </table>
+        保存用文字列（セーブを押して表示される文字列を保存しておけば後で読み込める）
+        <br />
+        <input type="text" id="savestr" size="80" />
+        <br />
+        <button id="save" style="margin-right: 15pt">セーブ</button>
+        <button id="load">ロード</button>
+
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+        ></script>
+        <script type="text/javascript" src="js/calc.js"></script>
+        <script type="text/javascript">
+            //シリアライズ用にname設定
+            $(document).ready(() => {
+                for (let i = 0; i < $("*").length; i++) {
+                    const element = $("*")[i];
+                    let id = element.getAttribute("id");
+
+                    if (element.getAttribute("id") != null) {
+                        element.setAttribute("name", id);
+                    }
+                }
+                refresh();
+            });
+
+            $("input").on("change", () => {
+                refresh();
+            });
+
+            $("input").on("keyup", () => {
+                refresh();
+            });
+
+            $("select").on("change", () => {
+                refresh();
+            });
+
+            $("#save").on("click", () => {
+                let s = $("form").serializeArray();
+                let json = JSON.stringify(s);
+                $("#savestr").val(json);
+            });
+
+            $("#load").on("click", () => {
+                let json = JSON.parse($("#savestr").val());
+
+                json.forEach((pair) => {
+                    //name と id は一致させている
+                    $("#" + pair.name).val(pair["value"]);
+                });
+
+                refresh();
+            });
+
+            function refresh() {
+                //ステータス計算
+                var paramnames = ["speed", "stamina", "power", "guts", "smart"];
+                var totalscore = 0;
+
+                paramnames.forEach((p) => {
+                    let score = calcScore($("#" + p).val());
+                    $("#" + p + "score").html(score);
+                    totalscore += score;
+                });
+
+                //固有スキル計算
+                console.log($("#sainou").val());
+                console.log($("#skillkoyulevel").val());
+                let koyuscore = $("#sainou").val() * $("#skillkoyulevel").val();
+                $("#skillkoyuscore").html(koyuscore);
+                totalscore += koyuscore;
+
+                //スキル計算
+                var skillnames = [
+                    "skillkoyukei",
+                    "skillkake",
+                    "skillken",
+                    "skilltri",
+                    "skillsoku",
+                    "skilldoku",
+                    "skillkaku",
+                    "skillgen",
+                    "skillkotsu1",
+                    "skillkotsu2",
+                ];
+                skillnames.forEach((s) => {
+                    let score =
+                        $("#" + s + "perscore").val() *
+                        $("#" + s + "count").val();
+                    $("#" + s + "score").html(score);
+                    totalscore += score;
+                });
+
+                //ランク
+                let rank = "";
+
+                if (totalscore <= 8199) rank = "余り " + (8199 - totalscore);
+                else
+                    rank =
+                        '<font color="red">超過</font> ' + (totalscore - 8199);
+
+                $("#result").html(totalscore + "（" + rank + "）");
+            }
+        </script>
+    </body>
+</html>
