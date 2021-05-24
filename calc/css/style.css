@@ -25,6 +25,7 @@ button.skillcount-minusbutton {
 input,
 select {
     font-size: 16pt;
+    transform: scale(0.95);
 }
 
 input.param {
