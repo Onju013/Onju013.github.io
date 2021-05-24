@@ -1,19 +1,5 @@
-//シリアライズ用にname設定
 $(document).ready(() => {
     initializeControls();
-
-    var t = 0;
-    document.documentElement.addEventListener(
-        "touchend",
-        function (e) {
-            var now = new Date().getTime();
-            if (now - t < 350) {
-                e.preventDefault();
-            }
-            t = now;
-        },
-        false
-    );
 
     $("*").each((i, e) => {
         let id = e.getAttribute("id");
@@ -21,6 +7,14 @@ $(document).ready(() => {
             e.name = id;
         }
     });
+
+    document.addEventListener(
+        "dblclick",
+        function (e) {
+            e.preventDefault();
+        },
+        { passive: false }
+    );
 
     refresh();
 });

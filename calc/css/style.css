@@ -10,7 +10,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-body {
+html {
     touch-action: manipulation;
 }
 
@@ -29,6 +29,7 @@ select {
 }
 
 input.param {
+    padding: 2px;
     width: 50px;
 }
 
@@ -46,11 +47,12 @@ input#savestr {
 
 table {
     border: 2px solid black;
+    max-width: 100%;
 }
 
 th,
 td {
-    padding: 2px;
+    max-width: 100%;
 }
 
 tr.whiteskill {
