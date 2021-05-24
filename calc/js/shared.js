@@ -1,6 +1,5 @@
 //シリアライズ用にname設定
 $(document).ready(() => {
-    console.log("ready:" + Date.now());
     initializeControls();
 
     $("*").each((i, e) => {
@@ -67,16 +66,11 @@ function refresh() {
         totalscore += score;
     });
 
-    //固有スキル計算
-    let koyuscore = $("#sainou").val() * $("#skillkoyulevel").val();
-    $("#skillkoyuscore").html(koyuscore);
-    totalscore += koyuscore;
-
     //スキル計算
     $(".skillcount").each((i, e) => {
-        let label = e.id.slice(0, -5); //e.g. skillkencount
+        let label = e.id.slice(0, -5);
         let score =
-            $("#" + label + "perscore").val() * $("#" + label + "count").val();
+            $("#" + label + "-perscore").val() * $("#" + label + "count").val();
         $("#" + label + "score").html(score);
         totalscore += score;
     });

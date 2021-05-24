@@ -4,6 +4,26 @@
     width: 50px;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button.skillcount-plusbutton,
+butotn.skillcount-minusbutton {
+    width: 24px;
+    height: 24px;
+}
+
+input.skillcount {
+    width: 32px;
+}
+
 .skillscore {
     text-align: right;
 }
@@ -12,9 +32,9 @@ table {
     border: 2px solid black;
 }
 
-th,td
-{
-    padding:2px;
+th,
+td {
+    padding: 2px;
 }
 
 tr.whiteskill {
@@ -31,4 +51,8 @@ tr.goldskill {
 
 tr.greenskill {
     background-color: #a0ffa0;
+}
+
+#savestr {
+    max-width: 80%;
 }

@@ -47,9 +47,7 @@
                 <tr>
                     <td>個別評価</td>
                     <td><div id="speedscore" class="paramscore">1</div></td>
-                    <td>
-                        <div id="staminascore" class="paramscore">1</div>
-                    </td>
+                    <td><div id="staminascore" class="paramscore">1</div></td>
                     <td><div id="powerscore" class="paramscore">1</div></td>
                     <td><div id="gutsscore" class="paramscore">1</div></td>
                     <td><div id="smartscore" class="paramscore">1</div></td>
@@ -60,7 +58,7 @@
                 <tr>
                     <td>才能</td>
                     <td>
-                        <select id="sainou">
+                        <select id="skillkoyu-perscore">
                             <option value="120">下位（★～★★）</option>
                             <option selected value="170">上位（★★★～）</option>
                         </select>
@@ -71,11 +69,12 @@
                     <td>
                         <input
                             type="number"
-                            id="skillkoyulevel"
+                            id="skillkoyucount"
                             step="1"
                             min="1"
                             max="6"
                             value="4"
+                            class="skillcount"
                         />
                     </td>
                 </tr>
@@ -90,16 +89,16 @@
                 <tr>
                     <th>スキル（スキル条件に合った適正がA～S）</th>
                     <th>取得数</th>
-                    <th>個別評価</th>
+                    <th nowrap>個別評価</th>
                 </tr>
                 <tr class="whiteskill">
                     <td>他ウマ娘の固有スキル（180）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkoyukeicount" class="skillcount" />
                         <input
                             type="hidden"
                             value="180"
-                            id="skillkoyukeiperscore"
+                            id="skillkoyukei-perscore"
                         />
                         個
                     </td>
@@ -109,12 +108,12 @@
                 </tr>
                 <tr class="redskill">
                     <td>～～駆け引き（174）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkakecount" class="skillcount" />
                         <input
                             type="hidden"
                             value="174"
-                            id="skillkakeperscore"
+                            id="skillkake-perscore"
                         />
                         個
                     </td>
@@ -122,12 +121,12 @@
                 </tr>
                 <tr class="redskill">
                     <td>～～けん制・焦り・ためらい（217）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkencount" class="skillcount" />
                         <input
                             type="hidden"
                             value="217"
-                            id="skillkenperscore"
+                            id="skillken-perscore"
                         />
                         個
                     </td>
@@ -135,12 +134,12 @@
                 </tr>
                 <tr class="redskill">
                     <td>トリック（217）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skilltricount" class="skillcount" />
                         <input
                             type="hidden"
                             value="217"
-                            id="skilltriperscore"
+                            id="skilltri-perscore"
                         />
                         個
                     </td>
@@ -148,12 +147,12 @@
                 </tr>
                 <tr class="redskill">
                     <td>束縛・ささやき・鋭い眼光（239）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillsokucount" class="skillcount" />
                         <input
                             type="hidden"
                             value="239"
-                            id="skillsokuperscore"
+                            id="skillsoku-perscore"
                         />
                         個
                     </td>
@@ -161,12 +160,12 @@
                 </tr>
                 <tr class="goldskill">
                     <td>独占力・魅惑のささやき・八方にらみ（559）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skilldokucount" class="skillcount" />
                         <input
                             type="hidden"
                             value="559"
-                            id="skilldokuperscore"
+                            id="skilldoku-perscore"
                         />
                         個
                     </td>
@@ -174,12 +173,12 @@
                 </tr>
                 <tr class="redskill">
                     <td>かく乱（94）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkakucount" class="skillcount" />
                         <input
                             type="hidden"
                             value="94"
-                            id="skillkakuperscore"
+                            id="skillkaku-perscore"
                         />
                         個
                     </td>
@@ -187,12 +186,12 @@
                 </tr>
                 <tr class="goldskill">
                     <td>幻惑のかく乱（367）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillgencount" class="skillcount" />
                         <input
                             type="hidden"
                             value="367"
-                            id="skillgenperscore"
+                            id="skillgen-perscore"
                         />
                         個
                     </td>
@@ -200,12 +199,12 @@
                 </tr>
                 <tr class="greenskill">
                     <td>～～のコツ○（191）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkotsu1count" class="skillcount" />
                         <input
                             type="hidden"
                             value="191"
-                            id="skillkotsu1perscore"
+                            id="skillkotsu1-perscore"
                         />
                         個
                     </td>
@@ -215,12 +214,12 @@
                 </tr>
                 <tr class="greenskill">
                     <td>～～のコツ◎（239）</td>
-                    <td>
+                    <td nowrap>
                         <input id="skillkotsu2count" class="skillcount" />
                         <input
                             type="hidden"
                             value="239"
-                            id="skillkotsu2perscore"
+                            id="skillkotsu2-perscore"
                         />
                         個
                     </td>
@@ -236,14 +235,14 @@
             <tr>
                 <td>評価点</td>
                 <td>
-                    <font size="24"> <div id="result">5</div></font>
+                    <font size="+3"> <div id="result">5</div></font>
                 </td>
                 <td>
                     <div id="rank"></div>
                 </td>
             </tr>
         </table>
-        <br>
+        <br />
         JSON（セーブを押して表示される文字列を保存しておけば復元できる）
         <br />
         <input type="text" id="savestr" size="60" />

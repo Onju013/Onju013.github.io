@@ -3,7 +3,7 @@
 //良い方法知らず脳筋でやっているだけなので別ファイルとしてまとめている
 //
 //memo
-//  最終的にhtmlを自動生成するプログラム書くから要らんかも
+//  最終的にページ自体を自動生成する予定だから深く考えなくていいかも
 //
 
 //ステータス
@@ -22,9 +22,11 @@ function initializeSkillControls() {
     $("input.skillcount").each((i, e) => {
         e.type = "number";
         e.step = 1;
-        e.value = 0;
-        e.min = 0;
-        e.max = 50;
+        if (e.id != "skillkoyucount") {
+            e.value = 0;
+            e.min = 0;
+            e.max = 50;
+        }
 
         let buttonPlus = document.createElement("button");
         buttonPlus.type = "button";
