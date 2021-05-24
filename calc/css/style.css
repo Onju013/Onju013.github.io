@@ -8,6 +8,19 @@
     text-align: right;
 }
 
+table {
+    border: 2px solid black;
+}
+
+th,td
+{
+    padding:2px;
+}
+
+tr.whiteskill {
+    background-color: white;
+}
+
 tr.redskill {
     background-color: #ffa0a0;
 }

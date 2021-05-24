@@ -1,10 +1,12 @@
 //シリアライズ用にname設定
 $(document).ready(() => {
+    console.log("ready:" + Date.now());
+    initializeControls();
+
     $("*").each((i, e) => {
         let id = e.getAttribute("id");
-
-        if (e.getAttribute("id") != null) {
-            e.setAttribute("name", id);
+        if (id != null) {
+            e.name = id;
         }
     });
 
@@ -15,11 +17,13 @@ $("input").on("change", (event) => {
     let target = event.target;
     if (target.type == "number") {
         let value = Number(target.value);
+        let max = target.getAttribute("max");
+        let min = target.getAttribute("min");
 
-        if (target.max != null && value > Number(target.max)) {
-            value = target.max;
-        } else if (target.min != null && value < Number(target.min)) {
-            value = target.min;
+        if (max != null && value > Number(max)) {
+            value = max;
+        } else if (min != null && value < Number(min)) {
+            value = min;
         }
 
         target.value = value;
@@ -37,7 +41,7 @@ $("select").on("change", () => {
 });
 
 $("#save").on("click", () => {
-    let s = $("form").serializeArray();
+    let s = $("form#inputarea").serializeArray();
     let json = JSON.stringify(s);
     $("#savestr").val(json);
 });
