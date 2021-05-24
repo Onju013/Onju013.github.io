@@ -33,6 +33,7 @@ function initializeSkillControls() {
         buttonPlus.innerText = "+";
         buttonPlus.className = "skillcount-plusbutton";
         buttonPlus.dataset.targetId = e.id;
+        buttonPlus.tabIndex = -1;
         e.after(buttonPlus);
 
         let buttonMinus = document.createElement("button");
@@ -40,6 +41,7 @@ function initializeSkillControls() {
         buttonMinus.innerText = "-";
         buttonMinus.className = "skillcount-minusbutton";
         buttonMinus.dataset.targetId = e.id;
+        buttonMinus.tabIndex = -1;
         e.before(buttonMinus);
     });
 

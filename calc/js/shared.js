@@ -92,8 +92,6 @@ function refresh() {
 }
 
 function calcScore(param) {
-    let x = [0.5, 0.26];
-
     //G
     if (param < 50) {
         return Math.round(param * 0.5 + 0.26);
