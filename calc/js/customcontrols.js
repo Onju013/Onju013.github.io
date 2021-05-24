@@ -54,7 +54,17 @@ function initializeSkillControls() {
     });
 }
 
+//スマホ対応
+function initializePattern() {
+    $("input").each((i, e) => {
+        if (e.type == "number") {
+            e.pattern = "\\d*";
+        }
+    });
+}
+
 function initializeControls() {
     initializeParamControls();
     initializeSkillControls();
+    initializePattern();
 }

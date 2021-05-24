@@ -27,12 +27,12 @@ select {
     font-size: 16pt;
 }
 
-input.skillcount {
-    width: 36px;
-}
-
 input.param {
     width: 50px;
+}
+
+input.skillcount {
+    width: 36px;
 }
 
 input#savestr {
