@@ -11,7 +11,7 @@ function initializeParamControls() {
     $("input.param").each((i, e) => {
         e.type = "number";
         e.step = 1;
-        e.value = 1;
+        e.value = 400;
         e.min = 1;
         e.max = 1200;
     });
