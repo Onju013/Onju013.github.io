@@ -16,12 +16,27 @@ body {
 
 button.skillcount-plusbutton,
 button.skillcount-minusbutton {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    margin-left: 3pt;
+    margin-right: 3pt;
+}
+
+input,
+select {
+    font-size: 16pt;
 }
 
 input.skillcount {
-    width: 32px;
+    width: 36px;
+}
+
+input.param {
+    width: 50px;
+}
+
+input#savestr {
+    max-width: 80%;
 }
 
 .skillscore {
@@ -51,12 +66,4 @@ tr.goldskill {
 
 tr.greenskill {
     background-color: #a0ffa0;
-}
-
-.param {
-    width: 50px;
-}
-
-#savestr {
-    max-width: 80%;
 }
