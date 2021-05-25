@@ -11,15 +11,24 @@
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>ウマ娘評価値計算機 for オープンリーグデバフ役</title>
+        <title>ウマ娘評価値計算機 for ジェミニ杯マイルデバフウマ娘</title>
 
         <style type="text/css"></style>
     </head>
     <body>
         <main>
             <font size="+1pt"
-                ><b>オープンリーグウマ娘評価計算機<br />（中距離デバフ用）</b>
-            </font>
+                ><b
+                    >オープンリーグウマ娘評価計算機<br />（ジェミニ杯マイルデバフウマ娘用）</b
+                > </font
+            ><br />
+            <font color="red"
+                ><b>
+                    6月でタウラス杯と極力異なる条件<br />
+                    →雨の日の安田記念だな！という安直な予想での作成です<br />
+                    ルール自体が変わる可能性もあります</b
+                ></font
+            >
             <br />
             <noscript
                 ><font color="red"
@@ -99,6 +108,7 @@
                         <td><div id="skillkoyuscore">680</div></td>
                     </tr>
                 </table>
+
                 <br />
                 <table>
                     <tr>
@@ -122,6 +132,79 @@
                             </div>
                         </td>
                     </tr>
+
+                    <tr class="greenskill">
+                        <td>
+                            春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○<br />一匹狼（129）
+                        </td>
+                        <td nowrap>
+                            <input id="skillgreen1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="129"
+                                id="skillgreen1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgreen1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>
+                            春ウマ◎・左回り◎・東京レース場◎<br />根幹距離◎・雨の日◎・道悪◎（174）
+                        </td>
+                        <td nowrap>
+                            <input id="skillgreen2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="174"
+                                id="skillgreen2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgreen2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>～～のコツ○（191）</td>
+                        <td nowrap>
+                            <input id="skillkotsu1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="191"
+                                id="skillkotsu1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkotsu1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>～～のコツ◎（239）</td>
+                        <td nowrap>
+                            <input id="skillkotsu2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillkotsu2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkotsu2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
                     <tr class="redskill">
                         <td>～～駆け引き（174）</td>
                         <td nowrap>
@@ -164,92 +247,80 @@
                             <div id="skilltriscore" class="skillscore">0</div>
                         </td>
                     </tr>
+
                     <tr class="redskill">
-                        <td>束縛・ささやき・鋭い眼光（239）</td>
+                        <td>スピードイーター・布石（239）</td>
                         <td nowrap>
-                            <input id="skillsokucount" class="skillcount" />
+                            <input id="skilleatercount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="239"
-                                id="skillsoku-perscore"
+                                id="skilleater-perscore"
                             />
                         </td>
                         <td>
-                            <div id="skillsokuscore" class="skillscore">0</div>
+                            <div id="skilleaterscore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="redskill">
+                        <td>鋭い眼光（239）</td>
+                        <td nowrap>
+                            <input id="skillgankou1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillgankou1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgankou1score" class="skillscore">
+                                0
+                            </div>
                         </td>
                     </tr>
                     <tr class="goldskill">
-                        <td>独占力・魅惑のささやき・八方にらみ（559）</td>
+                        <td>八方にらみ（559）</td>
                         <td nowrap>
-                            <input id="skilldokucount" class="skillcount" />
+                            <input id="skillgankou2count" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="559"
-                                id="skilldoku-perscore"
+                                id="skillgankou2-perscore"
                             />
                         </td>
                         <td>
-                            <div id="skilldokuscore" class="skillscore">0</div>
+                            <div id="skillgankou2score" class="skillscore">
+                                0
+                            </div>
                         </td>
                     </tr>
                     <tr class="redskill">
                         <td>かく乱（94）</td>
                         <td nowrap>
-                            <input id="skillkakucount" class="skillcount" />
+                            <input id="skillkaku1count" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="94"
-                                id="skillkaku-perscore"
+                                id="skillkaku1-perscore"
                             />
                         </td>
                         <td>
-                            <div id="skillkakuscore" class="skillscore">0</div>
+                            <div id="skillkaku1score" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="goldskill">
                         <td>幻惑のかく乱（367）</td>
                         <td nowrap>
-                            <input id="skillgencount" class="skillcount" />
+                            <input id="skillkaku2count" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="367"
-                                id="skillgen-perscore"
+                                id="skillkaku2-perscore"
                             />
                         </td>
                         <td>
-                            <div id="skillgenscore" class="skillscore">0</div>
-                        </td>
-                    </tr>
-                    <tr class="greenskill">
-                        <td>～～のコツ○（191）</td>
-                        <td nowrap>
-                            <input id="skillkotsu1count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="191"
-                                id="skillkotsu1-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillkotsu1score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="greenskill">
-                        <td>～～のコツ◎（239）</td>
-                        <td nowrap>
-                            <input id="skillkotsu2count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="239"
-                                id="skillkotsu2-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillkotsu2score" class="skillscore">
-                                0
-                            </div>
+                            <div id="skillkaku2score" class="skillscore">0</div>
                         </td>
                     </tr>
                 </table>
@@ -287,15 +358,15 @@
                     <td>スタミナ</td>
                 </tr>
                 <tr class="greenskill">
-                    <td>良バ場</td>
+                    <td>道悪</td>
                     <td>パワー</td>
                 </tr>
                 <tr class="greenskill">
-                    <td>晴れの日</td>
+                    <td>雨の日</td>
                     <td>根性</td>
                 </tr>
                 <tr class="greenskill">
-                    <td>～～のコツ</td>
+                    <td>先行のコツ</td>
                     <td>賢さ</td>
                 </tr>
             </table>
@@ -309,10 +380,10 @@
             <table>
                 <tr>
                     <td>評価点</td>
-                    <td nowrap>
+                    <td>
                         <font size="+3"> <div id="result">5</div></font>
                     </td>
-                    <td nowrap>
+                    <td>
                         <div id="rank"></div>
                     </td>
                 </tr>

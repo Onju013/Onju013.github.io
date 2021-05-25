@@ -14,6 +14,10 @@ html {
     touch-action: manipulation;
 }
 
+body {
+    background-color: #f0f0f0;
+}
+
 button.skillcount-plusbutton,
 button.skillcount-minusbutton {
     width: 28px;
@@ -22,7 +26,7 @@ button.skillcount-minusbutton {
     margin-right: 3pt;
 }
 
-input,
+input[type="number"],
 select {
     font-size: 16pt;
     transform: scale(0.95);
@@ -55,18 +59,35 @@ td {
     max-width: 100%;
 }
 
-tr.whiteskill {
-    background-color: white;
+main {
+    position: relative;
 }
 
-tr.redskill {
+footer {
+    background-color: #a060a0;
+    color: white;
+
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
+#footer-dummy {
+    height: 80px;
+}
+
+.whiteskill {
+    background-color: #e0e0e0;
+}
+
+.redskill {
     background-color: #ffa0a0;
 }
 
-tr.goldskill {
-    background-color: #ffffa0;
+.goldskill {
+    background-color: #f0f0a0;
 }
 
-tr.greenskill {
-    background-color: #a0ffa0;
+.greenskill {
+    background-color: #a0f8a0;
 }

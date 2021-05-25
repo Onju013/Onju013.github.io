@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Onju" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>ウマ娘評価値計算機 for ジェミニ杯マイル先行ウマ娘</title>
+
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <main>
+            <font size="+1pt"
+                ><b
+                    >オープンリーグウマ娘評価計算機<br />（ジェミニ杯マイル先行ウマ娘用）</b
+                > </font
+            ><br />
+            <font color="red"
+                ><b>
+                    6月でタウラス杯と極力異なる条件<br />
+                    →雨の日の安田記念だな！という安直な予想での作成です<br />
+                    ルール自体が変わる可能性もあります</b
+                ></font
+            >
+            <br />
+            <noscript
+                ><font color="red"
+                    ><b>JavaScriptの有効化が必須です</b></font
+                ></noscript
+            >
+            <br />
+            <form id="inputarea">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>スピード</th>
+                        <th>スタミナ</th>
+                        <th>パワー</th>
+                        <th>根性</th>
+                        <th>賢さ</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input id="speed" class="param" />
+                        </td>
+                        <td>
+                            <input id="stamina" class="param" />
+                        </td>
+                        <td>
+                            <input id="power" class="param" />
+                        </td>
+                        <td>
+                            <input id="guts" class="param" />
+                        </td>
+                        <td>
+                            <input id="smart" class="param" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>個別評価</td>
+                        <td><div id="speedscore" class="paramscore">1</div></td>
+                        <td>
+                            <div id="staminascore" class="paramscore">1</div>
+                        </td>
+                        <td><div id="powerscore" class="paramscore">1</div></td>
+                        <td><div id="gutsscore" class="paramscore">1</div></td>
+                        <td><div id="smartscore" class="paramscore">1</div></td>
+                    </tr>
+                </table>
+                <br />
+                <table>
+                    <tr>
+                        <td>才能</td>
+                        <td>
+                            <select id="skillkoyu-perscore">
+                                <option value="120">下位（★～★★）</option>
+                                <option selected value="170">
+                                    上位（★★★～）
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>固有スキルレベル</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="skillkoyucount"
+                                step="1"
+                                min="1"
+                                max="6"
+                                value="4"
+                                class="skillcount"
+                            />
+                            <font color="red"><b>※選択し忘れやすい</b></font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>個別評価</td>
+                        <td><div id="skillkoyuscore">680</div></td>
+                    </tr>
+                </table>
+
+                <br />
+                <table>
+                    <tr>
+                        <th>スキル（※条件に合った適正がA～S）</th>
+                        <th>取得数</th>
+                        <th nowrap>個別評価</th>
+                    </tr>
+                    <tr class="whiteskill">
+                        <td>他ウマ娘の固有スキル（180）</td>
+                        <td nowrap>
+                            <input id="skillkoyukeicount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="180"
+                                id="skillkoyukei-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkoyukeiscore" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>
+                            春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○（129）
+                        </td>
+                        <td nowrap>
+                            <input id="skillgreen1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="129"
+                                id="skillgreen1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgreen1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>
+                            春ウマ◎・左回り◎・東京レース場◎<br />根幹距離◎・雨の日◎・道悪◎（174）
+                        </td>
+                        <td nowrap>
+                            <input id="skillgreen2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="174"
+                                id="skillgreen2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgreen2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>先行のコツ○（191）</td>
+                        <td nowrap>
+                            <input id="skillkotsu1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="191"
+                                id="skillkotsu1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkotsu1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="greenskill">
+                        <td>先行のコツ◎（239）</td>
+                        <td nowrap>
+                            <input id="skillkotsu2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillkotsu2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkotsu2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>
+                            コーナー回復◯<br />
+                            直線回復<br />
+                            末脚<br />
+                            直線加速<br />
+                            直線巧者<br />
+                            コーナー加速◯<br />
+                            コーナー巧者○<br />
+                            ウマ込み冷静（217）
+                        </td>
+                        <td nowrap>
+                            <input id="skillhanyou1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="217"
+                                id="skillhanyou1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillhanyou1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="goldskill">
+                        <td>
+                            円弧のマエストロ<br />
+                            好転一息<br />
+                            全身全霊<br />
+                            一陣の風<br />
+                            ハヤテ一文字<br />
+                            曲線のソムリエ<br />
+                            弧線のプロフェッサー<br />
+                            どこ吹く風（508）
+                        </td>
+                        <td nowrap>
+                            <input id="skillhanyou2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="508"
+                                id="skillhanyou2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillhanyou2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>マイル直線○・マイルコーナー○（239）</td>
+                        <td nowrap>
+                            <input id="skillmile1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillmile1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillmile1score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>マイル直線◎・マイルコーナー◎（288）</td>
+                        <td nowrap>
+                            <input id="skillmile2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="288"
+                                id="skillmile2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillmile2score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>
+                            積極策<br />ギアシフト<br />アクセラレーション<br />展開窺い<br />上昇気流（239）
+                        </td>
+                        <td nowrap>
+                            <input id="skillacc1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillacc1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillacc1score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="goldskill">
+                        <td>
+                            マイルの支配者<br />ギアチェンジ<br />アクセル全開！<br />慧眼<br />豪脚（559）
+                        </td>
+                        <td nowrap>
+                            <input id="skillacc2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="559"
+                                id="skillacc2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillacc2score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>集中力（？）</td>
+                        <td nowrap>
+                            <input id="skilltest1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="0"
+                                id="skilltest1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skilltest1score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="goldskill">
+                        <td>コンセントレーション（394）</td>
+                        <td nowrap>
+                            <input id="skilltest2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="394"
+                                id="skilltest2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skilltest2score" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>栄養補給<br />抜け出し準備<br />好位追走（239）</td>
+                        <td nowrap>
+                            <input id="skillsenkou1count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skillsenkou1-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillsenkou1score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="goldskill">
+                        <td>
+                            食いしん坊<br />スピードスター<br />レースプランナー（559）
+                        </td>
+                        <td nowrap>
+                            <input id="skillsenkou2count" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="559"
+                                id="skillsenkou2-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillsenkou2score" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="whiteskill">
+                        <td>尻尾上がり・ふり絞り（217）</td>
+                        <td nowrap>
+                            <input id="skillshippocount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="217"
+                                id="skillshippo-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillshipposcore" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="redskill">
+                        <td>～～駆け引き（174）</td>
+                        <td nowrap>
+                            <input id="skillkakecount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="174"
+                                id="skillkake-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkakescore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+                    <tr class="redskill">
+                        <td>～～けん制・焦り・ためらい（217）</td>
+                        <td nowrap>
+                            <input id="skillkencount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="217"
+                                id="skillken-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillkenscore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+                    <tr class="redskill">
+                        <td>トリック（217）</td>
+                        <td nowrap>
+                            <input id="skilltricount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="217"
+                                id="skilltri-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skilltriscore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
+                    <tr class="redskill">
+                        <td>スピードイーター（239）</td>
+                        <td nowrap>
+                            <input id="skilleatercount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="239"
+                                id="skilleater-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skilleaterscore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <br />
+            JSON（セーブを押して表示される文字列を保存しておけば復元できる）
+            <br />
+            <input type="text" id="savestr" size="60" />
+            <br />
+            <button id="save" style="margin-right: 15pt">JSONでセーブ</button>
+            <button id="load">JSONからロード</button>
+            <br /><br />
+
+            <b>緑スキル対応メモ</b>
+            <table>
+                <tr class="greenskill">
+                    <td>春ウマ娘</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>左回り</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>一匹狼</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>根幹距離</td>
+                    <td>スタミナ</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>東京レース場</td>
+                    <td>スタミナ</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>道悪</td>
+                    <td>パワー</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>雨の日</td>
+                    <td>根性</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>先行のコツ</td>
+                    <td>賢さ</td>
+                </tr>
+            </table>
+
+            <br />
+            <a href="..">戻る</a>
+            <div id="footer-dummy"></div>
+        </main>
+
+        <footer id="totalscore">
+            <table>
+                <tr>
+                    <td>評価点</td>
+                    <td>
+                        <font size="+3"> <div id="result">5</div></font>
+                    </td>
+                    <td>
+                        <div id="rank"></div>
+                    </td>
+                </tr>
+            </table>
+            取得スキル数：<span id="totalskillcount"></span>
+        </footer>
+
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+        ></script>
+        <script type="text/javascript" src="js/customcontrols.js"></script>
+        <script type="text/javascript" src="js/shared.js"></script>
+    </body>
+</html>

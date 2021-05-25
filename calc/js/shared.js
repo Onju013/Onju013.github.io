@@ -65,6 +65,7 @@ $("#load").on("click", () => {
 
 function refresh() {
     var totalscore = 0;
+    var totalskillcount = 1;
 
     //ステータス計算
     $(".param").each((i, e) => {
@@ -80,6 +81,9 @@ function refresh() {
             $("#" + label + "-perscore").val() * $("#" + label + "count").val();
         $("#" + label + "score").html(score);
         totalscore += score;
+
+        if (label != "skillkoyu")
+            totalskillcount += Number($("#" + label + "count").val());
     });
 
     //ランク
@@ -89,6 +93,7 @@ function refresh() {
     else rank = '<font color="red">超過</font> ' + (totalscore - 8199);
 
     $("#result").html(totalscore + "（" + rank + "）");
+    $("#totalskillcount").html(totalskillcount);
 }
 
 function calcScore(param) {
