@@ -52,11 +52,22 @@ input#savestr {
 table {
     border: 2px solid black;
     max-width: 100%;
+    border-collapse: collapse;
+    padding: 2px;
 }
 
-th,
+th {
+    max-width: 100%;
+    border-width: 2px 0px;
+    border-color: black;
+    border-style: solid;
+}
+
 td {
     max-width: 100%;
+    border-width: 2px 1px;
+    border-color: black;
+    border-style: dotted;
 }
 
 main {
