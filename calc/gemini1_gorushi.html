@@ -11,7 +11,7 @@
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>ウマ娘評価値計算機 for ジェミニ杯マイル差しウマ娘</title>
+        <title>ウマ娘評価値計算機 for ジェミニ杯マイルゴルシ</title>
 
         <style type="text/css"></style>
     </head>
@@ -19,7 +19,7 @@
         <main>
             <font size="+1pt"
                 ><b
-                    >オープンリーグウマ娘評価計算機<br />（ジェミニ杯マイル差しウマ娘用）</b
+                    >オープンリーグウマ娘評価計算機<br />（ジェミニ杯マイルゴルシ用）</b
                 > </font
             ><br />
             <font color="red"
@@ -134,6 +134,21 @@
                         </td>
                     </tr>
 
+                    <tr class="purpleskill">
+                        <td>ゲート難（-174）</td>
+                        <td nowrap>
+                            <input id="skillgatecount" class="skillcount" />
+                            <input
+                                type="hidden"
+                                value="-174"
+                                id="skillgate-perscore"
+                            />
+                        </td>
+                        <td>
+                            <div id="skillgatescore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
                     <tr class="greenskill">
                         <td>
                             春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○（129）
@@ -173,7 +188,7 @@
                     </tr>
 
                     <tr class="greenskill">
-                        <td>差しのコツ○（191）</td>
+                        <td>追込のコツ○（191）</td>
                         <td nowrap>
                             <input id="skillkotsu1count" class="skillcount" />
                             <input
@@ -190,7 +205,7 @@
                     </tr>
 
                     <tr class="greenskill">
-                        <td>差しのコツ◎（239）</td>
+                        <td>追込のコツ◎（239）</td>
                         <td nowrap>
                             <input id="skillkotsu2count" class="skillcount" />
                             <input
@@ -290,7 +305,7 @@
 
                     <tr class="whiteskill">
                         <td>
-                            マイル直線○<br />マイルコーナー○<br />差し直線○<br />差しコーナー○（239）
+                            マイル直線○<br />マイルコーナー○<br />先行直線○<br />先行コーナー○（239）
                         </td>
                         <td nowrap>
                             <input id="skillstcur1count" class="skillcount" />
@@ -309,7 +324,7 @@
 
                     <tr class="whiteskill">
                         <td>
-                            マイル直線◎<br />マイルコーナー◎<br />差し直線◎<br />差しコーナー◎（288）
+                            マイル直線◎<br />マイルコーナー◎<br />先行直線◎<br />先行コーナー◎（288）
                         </td>
                         <td nowrap>
                             <input id="skillstcur2count" class="skillcount" />
@@ -360,107 +375,20 @@
                         </td>
                     </tr>
 
-                    <tr class="whiteskill">
-                        <td>がんばり屋<br />十万バリキ（239）</td>
-                        <td nowrap>
-                            <input id="skillsashi11count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="239"
-                                id="skillsashi11-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillsashi11score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
                     <tr class="goldskill">
-                        <td>努力家（367）</td>
-                        <td nowrap>
-                            <input id="skillsashi12count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="367"
-                                id="skillsashi12-perscore"
-                            />
-                        </td>
                         <td>
-                            <div id="skillsashi12score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="whiteskill">
-                        <td>読解力（94）</td>
-                        <td nowrap>
-                            <input id="skillsashi31count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="94"
-                                id="skillsashi31-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillsashi31score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="goldskill">
-                        <td>大局観（367）</td>
-                        <td nowrap>
-                            <input id="skillsashi32count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="367"
-                                id="skillsashi32-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillsashi32score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="whiteskill">
-                        <td>
-                            位置取り押し上げ<br />差し切り体勢<br />外差し準備<br />小休憩（239）
+                            マイルの支配者<br />ギアチェンジ<br />アクセル全開！<br />慧眼<br />豪脚（559）
                         </td>
                         <td nowrap>
-                            <input id="skillsashi21count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="239"
-                                id="skillsashi21-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillsashi21score" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="goldskill">
-                        <td>迅速果断<br />乗り換え上手<br />昇り龍（559）</td>
-                        <td nowrap>
-                            <input id="skillsashi22count" class="skillcount" />
+                            <input id="skillmile2count" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="559"
-                                id="skillsashi22-perscore"
+                                id="skillmile2-perscore"
                             />
                         </td>
                         <td>
-                            <div id="skillsashi22score" class="skillscore">
-                                0
-                            </div>
+                            <div id="skillmile2score" class="skillscore">0</div>
                         </td>
                     </tr>
 
@@ -525,7 +453,7 @@
                     </tr>
 
                     <tr class="redskill">
-                        <td>布石（239）</td>
+                        <td>スピードイーター（239）</td>
                         <td nowrap>
                             <input id="skilleatercount" class="skillcount" />
                             <input
@@ -581,7 +509,7 @@
                     <td>根性</td>
                 </tr>
                 <tr class="greenskill">
-                    <td>差しのコツ</td>
+                    <td>追込のコツ</td>
                     <td>賢さ</td>
                 </tr>
             </table>
