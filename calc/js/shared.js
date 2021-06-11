@@ -16,48 +16,48 @@ $(document).ready(() => {
         { passive: false }
     );
 
-    refresh();
-});
+    $("input").on("change", (event) => {
+        let target = event.target;
+        if (target.type == "number") {
+            let value = Number(target.value);
+            let max = target.getAttribute("max");
+            let min = target.getAttribute("min");
 
-$("input").on("change", (event) => {
-    let target = event.target;
-    if (target.type == "number") {
-        let value = Number(target.value);
-        let max = target.getAttribute("max");
-        let min = target.getAttribute("min");
+            if (max != null && value > Number(max)) {
+                value = max;
+            } else if (min != null && value < Number(min)) {
+                value = min;
+            }
 
-        if (max != null && value > Number(max)) {
-            value = max;
-        } else if (min != null && value < Number(min)) {
-            value = min;
+            target.value = value;
         }
 
-        target.value = value;
-    }
+        refresh();
+    });
 
-    refresh();
-});
+    $("input[type='number']").on("focus", (e) => {
+        $(e.target).select();
+    });
 
-$("input").on("keyup", () => {
-    refresh();
-});
+    $("input").on("change keyup", () => {
+        refresh();
+    });
 
-$("select").on("change", () => {
-    refresh();
-});
+    $("#save").on("click", () => {
+        let s = $("form#inputarea").serializeArray();
+        let json = JSON.stringify(s);
+        $("#savestr").val(json);
+    });
 
-$("#save").on("click", () => {
-    let s = $("form#inputarea").serializeArray();
-    let json = JSON.stringify(s);
-    $("#savestr").val(json);
-});
+    $("#load").on("click", () => {
+        let json = JSON.parse($("#savestr").val());
 
-$("#load").on("click", () => {
-    let json = JSON.parse($("#savestr").val());
+        json.forEach((pair) => {
+            //name と id は一致させている
+            $("#" + pair.name).val(pair.value);
+        });
 
-    json.forEach((pair) => {
-        //name と id は一致させている
-        $("#" + pair.name).val(pair.value);
+        refresh();
     });
 
     refresh();
