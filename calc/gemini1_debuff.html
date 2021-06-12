@@ -102,16 +102,17 @@
                 </table>
 
                 <br />
+                <font color="red"><b>※条件に合った適正がA～S</b></font>
                 <table>
                     <tr>
-                        <th>スキル（※条件に合った適正がA～S）</th>
+                        <th>スキル</th>
                         <th>評価</th>
                         <th>取得数</th>
                         <th nowrap>個別評価</th>
                     </tr>
                     <tr class="whiteskill">
                         <td>他ウマ娘の固有スキル</td>
-                        <td>180</td>
+                        <td class="display-scoreperskill">180</td>
                         <td nowrap>
                             <input id="koyukei-skillcount" class="skillcount" />
                             <input
@@ -129,9 +130,9 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ○・右回り○・京都レース場○<br />根幹距離○・晴れの日○・良バ場○<br />一匹狼
+                            春ウマ○<br />右回り○<br />京都レース場○<br />根幹距離○<br />晴れの日○<br />良バ場○<br />一匹狼
                         </td>
-                        <td>129</td>
+                        <td class="display-scoreperskill">129</td>
                         <td nowrap>
                             <input id="green1-skillcount" class="skillcount" />
                             <input
@@ -149,9 +150,9 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ◎・右回り◎・東京レース場◎<br />根幹距離◎・晴れの日◎・良バ場◎
+                            春ウマ◎<br />右回り◎<br />東京レース場◎<br />根幹距離◎<br />晴れの日◎<br />良バ場◎
                         </td>
-                        <td>174</td>
+                        <td class="display-scoreperskill">174</td>
                         <td nowrap>
                             <input id="green2-skillcount" class="skillcount" />
                             <input
@@ -169,7 +170,7 @@
 
                     <tr class="greenskill">
                         <td>～～のコツ○</td>
-                        <td>191</td>
+                        <td class="display-scoreperskill">191</td>
                         <td nowrap>
                             <input id="kotsu1-skillcount" class="skillcount" />
                             <input
@@ -187,7 +188,7 @@
 
                     <tr class="greenskill">
                         <td>～～のコツ◎</td>
-                        <td>239</td>
+                        <td class="display-scoreperskill">239</td>
                         <td nowrap>
                             <input id="kotsu2-skillcount" class="skillcount" />
                             <input
@@ -205,7 +206,7 @@
 
                     <tr class="redskill">
                         <td>～～駆け引き</td>
-                        <td>174</td>
+                        <td class="display-scoreperskill">174</td>
                         <td nowrap>
                             <input id="kake-skillcount" class="skillcount" />
                             <input
@@ -220,7 +221,7 @@
                     </tr>
                     <tr class="redskill">
                         <td>～～けん制・焦り・ためらい</td>
-                        <td>217</td>
+                        <td class="display-scoreperskill">217</td>
                         <td nowrap>
                             <input id="ken-skillcount" class="skillcount" />
                             <input
@@ -235,7 +236,7 @@
                     </tr>
                     <tr class="redskill">
                         <td>トリック</td>
-                        <td>217</td>
+                        <td class="display-scoreperskill">217</td>
                         <td nowrap>
                             <input id="tri-skillcount" class="skillcount" />
                             <input
@@ -251,7 +252,7 @@
 
                     <tr class="redskill">
                         <td>スタミナイーター<br />リスタート</td>
-                        <td>239</td>
+                        <td class="display-scoreperskill">239</td>
                         <td nowrap>
                             <input id="eater-skillcount" class="skillcount" />
                             <input
@@ -269,7 +270,7 @@
 
                     <tr class="redskill">
                         <td>鋭い眼光</td>
-                        <td>239</td>
+                        <td class="display-scoreperskill">239</td>
                         <td nowrap>
                             <input id="gankou1-skillcount" class="skillcount" />
                             <input
@@ -286,7 +287,7 @@
                     </tr>
                     <tr class="goldskill">
                         <td>八方にらみ</td>
-                        <td>559</td>
+                        <td class="display-scoreperskill">559</td>
                         <td nowrap>
                             <input id="gankou2-skillcount" class="skillcount" />
                             <input
@@ -304,7 +305,7 @@
 
                     <tr class="redskill">
                         <td>かく乱<br />目くらまし</td>
-                        <td>94</td>
+                        <td class="display-scoreperskill">94</td>
                         <td nowrap>
                             <input id="kaku1-skillcount" class="skillcount" />
                             <input
@@ -321,7 +322,7 @@
                     </tr>
                     <tr class="goldskill">
                         <td>幻惑のかく乱<br />奇術師</td>
-                        <td>367</td>
+                        <td class="display-scoreperskill">367</td>
                         <td nowrap>
                             <input id="kaku2-skillcount" class="skillcount" />
                             <input
@@ -346,7 +347,7 @@
             <br />
             <button id="save" style="margin-right: 15pt">JSONでセーブ</button>
             <button id="load">JSONからロード</button>
-            <br />
+            <br /><br />
 
             <a href="..">戻る</a>
             <div id="footer-dummy"></div>

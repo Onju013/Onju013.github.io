@@ -63,7 +63,7 @@ $(document).ready(() => {
 
 function refresh() {
     var totalscore = 0;
-    var totalskillcount = 1;    //1は固有の分
+    var totalskillcount = 1; //1は固有の分
 
     //ステータス計算
     $(".param").each((i, e) => {

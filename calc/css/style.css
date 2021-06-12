@@ -83,8 +83,7 @@ footer {
     text-align: center;
 }
 
-div.display-scoreperskill {
-    display: inline-block;
+td.display-scoreperskill {
     font-weight: bold;
 }
 
