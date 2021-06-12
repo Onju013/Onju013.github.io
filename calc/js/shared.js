@@ -75,9 +75,12 @@ function refresh() {
     //スキル計算
     $(".skillcount").each((i, e) => {
         let label = e.id.slice(0, -11);
-        let score =
-            $("#" + label + "-scoreperskill").val() *
-            $("#" + label + "-skillcount").val();
+        let scoreperskill;
+        if ($("#" + label + "-scoreperskill").val())
+            scoreperskill = $("#" + label + "-scoreperskill").val();
+        else scoreperskill = Number($("#" + label + "-scoreperskill").text());
+
+        let score = scoreperskill * $("#" + label + "-skillcount").val();
         $("#" + label + "-skillscore").html(score);
         totalscore += score;
 
