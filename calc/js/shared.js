@@ -16,31 +16,29 @@ $(document).ready(() => {
         { passive: false }
     );
 
-    $("input").on("change", (event) => {
-        let target = event.target;
-        if (target.type == "number") {
-            let value = Number(target.value);
-            let max = target.getAttribute("max");
-            let min = target.getAttribute("min");
+    $("input[type='number']").on("change", (e) => {
+        let target = e.target;
+        let value = Number(target.value);
+        let max = target.getAttribute("max");
+        let min = target.getAttribute("min");
 
-            if (max != null && value > Number(max)) {
-                value = max;
-            } else if (min != null && value < Number(min)) {
-                value = min;
-            }
-
-            target.value = value;
+        if (max != null && value > Number(max)) {
+            value = max;
+        } else if (min != null && value < Number(min)) {
+            value = min;
         }
 
+        target.value = value;
+
+        refresh();
+    });
+
+    $("input").on("keyup", () => {
         refresh();
     });
 
     $("input[type='number']").on("focus", (e) => {
         $(e.target).select();
-    });
-
-    $("input").on("change keyup", () => {
-        refresh();
     });
 
     $("#save").on("click", () => {

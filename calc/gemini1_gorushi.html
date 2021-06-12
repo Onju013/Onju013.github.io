@@ -15,6 +15,7 @@
 
         <style type="text/css"></style>
     </head>
+
     <body>
         <main>
             <font size="+1pt"
@@ -41,7 +42,11 @@
                     <tr>
                         <td></td>
                         <td>
-                            <input id="speed" class="param" />
+                            <input
+                                id="speed"
+                                class="param"
+                                onfocus="console.log(this);"
+                            />
                         </td>
                         <td>
                             <input id="stamina" class="param" />
@@ -109,7 +114,7 @@
                         <th nowrap>個別評価</th>
                     </tr>
                     <tr class="whiteskill">
-                        <td>他ウマ娘の固有スキル（180）</td>
+                        <td>他ウマ娘の固有スキル（<div class="display-scoreperskill">180</div>）</td>
                         <td nowrap>
                             <input id="skillkoyukeicount" class="skillcount" />
                             <input
@@ -142,7 +147,7 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○（129）
+                            春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○（<div class="display-scoreperskill">129</div>）
                         </td>
                         <td nowrap>
                             <input id="skillgreen1count" class="skillcount" />
@@ -161,7 +166,7 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ◎・左回り◎・東京レース場◎<br />根幹距離◎・雨の日◎・道悪◎（174）
+                            春ウマ◎・左回り◎・東京レース場◎<br />根幹距離◎・雨の日◎・道悪◎（<div class="display-scoreperskill">174</div>）
                         </td>
                         <td nowrap>
                             <input id="skillgreen2count" class="skillcount" />
@@ -179,7 +184,7 @@
                     </tr>
 
                     <tr class="greenskill">
-                        <td>追込のコツ○（191）</td>
+                        <td>追込のコツ○（<div class="display-scoreperskill">191</div>）</td>
                         <td nowrap>
                             <input id="skillkotsu1count" class="skillcount" />
                             <input
@@ -196,7 +201,7 @@
                     </tr>
 
                     <tr class="greenskill">
-                        <td>追込のコツ◎（239）</td>
+                        <td>追込のコツ◎（<div class="display-scoreperskill">239</div>）</td>
                         <td nowrap>
                             <input id="skillkotsu2count" class="skillcount" />
                             <input
@@ -221,7 +226,7 @@
                             直線巧者<br />
                             コーナー加速◯<br />
                             コーナー巧者○<br />
-                            ウマ込み冷静（217）
+                            ウマ込み冷静（<div class="display-scoreperskill">217</div>）
                         </td>
                         <td nowrap>
                             <input id="skillhanyou1count" class="skillcount" />
@@ -247,7 +252,7 @@
                             ハヤテ一文字<br />
                             曲線のソムリエ<br />
                             弧線のプロフェッサー<br />
-                            どこ吹く風（508）
+                            どこ吹く風（<div class="display-scoreperskill">508</div>）
                         </td>
                         <td nowrap>
                             <input id="skillhanyou2count" class="skillcount" />
@@ -265,7 +270,7 @@
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>集中力（129）</td>
+                        <td>集中力（<div class="display-scoreperskill">129</div>）</td>
                         <td nowrap>
                             <input id="skilltest1count" class="skillcount" />
                             <input
@@ -280,7 +285,7 @@
                     </tr>
 
                     <tr class="goldskill">
-                        <td>コンセントレーション（394）</td>
+                        <td>コンセントレーション（<div class="display-scoreperskill">394</div>）</td>
                         <td nowrap>
                             <input id="skilltest2count" class="skillcount" />
                             <input
@@ -296,7 +301,7 @@
 
                     <tr class="whiteskill">
                         <td>
-                            マイル直線○<br />マイルコーナー○<br />先行直線○<br />先行コーナー○（239）
+                            マイル直線○<br />マイルコーナー○<br />先行直線○<br />先行コーナー○（<div class="display-scoreperskill">239</div>）
                         </td>
                         <td nowrap>
                             <input id="skillstcur1count" class="skillcount" />
@@ -315,7 +320,7 @@
 
                     <tr class="whiteskill">
                         <td>
-                            マイル直線◎<br />マイルコーナー◎<br />先行直線◎<br />先行コーナー◎（288）
+                            マイル直線◎<br />マイルコーナー◎<br />先行直線◎<br />先行コーナー◎（<div class="display-scoreperskill">288</div>）
                         </td>
                         <td nowrap>
                             <input id="skillstcur2count" class="skillcount" />
@@ -334,7 +339,7 @@
 
                     <tr class="whiteskill">
                         <td>
-                            積極策<br />ギアシフト<br />アクセラレーション<br />展開窺い<br />上昇気流（239）
+                            積極策<br />ギアシフト<br />アクセラレーション<br />展開窺い<br />上昇気流（<div class="display-scoreperskill">239</div>）
                         </td>
                         <td nowrap>
                             <input id="skillmile1count" class="skillcount" />
@@ -351,24 +356,7 @@
 
                     <tr class="goldskill">
                         <td>
-                            マイルの支配者<br />ギアチェンジ<br />アクセル全開！<br />慧眼<br />豪脚（559）
-                        </td>
-                        <td nowrap>
-                            <input id="skillmile2count" class="skillcount" />
-                            <input
-                                type="hidden"
-                                value="559"
-                                id="skillmile2-perscore"
-                            />
-                        </td>
-                        <td>
-                            <div id="skillmile2score" class="skillscore">0</div>
-                        </td>
-                    </tr>
-
-                    <tr class="goldskill">
-                        <td>
-                            マイルの支配者<br />ギアチェンジ<br />アクセル全開！<br />慧眼<br />豪脚（559）
+                            マイルの支配者<br />ギアチェンジ<br />アクセル全開！<br />慧眼<br />豪脚（<div class="display-scoreperskill">559</div>）
                         </td>
                         <td nowrap>
                             <input id="skillmile2count" class="skillcount" />
@@ -384,7 +372,7 @@
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>登山家<br />尻尾上がり<br />ふり絞り（217）</td>
+                        <td>登山家<br />尻尾上がり<br />ふり絞り（<div class="display-scoreperskill">217</div>）</td>
                         <td nowrap>
                             <input id="skillshippocount" class="skillcount" />
                             <input
@@ -401,7 +389,7 @@
                     </tr>
 
                     <tr class="redskill">
-                        <td>～～駆け引き（174）</td>
+                        <td>～～駆け引き（<div class="display-scoreperskill">174</div>）</td>
                         <td nowrap>
                             <input id="skillkakecount" class="skillcount" />
                             <input
@@ -415,7 +403,7 @@
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>～～けん制・焦り・ためらい（217）</td>
+                        <td>～～けん制・焦り・ためらい（<div class="display-scoreperskill">217</div>）</td>
                         <td nowrap>
                             <input id="skillkencount" class="skillcount" />
                             <input
@@ -429,7 +417,7 @@
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>トリック（217）</td>
+                        <td>トリック（<div class="display-scoreperskill">217</div>）</td>
                         <td nowrap>
                             <input id="skilltricount" class="skillcount" />
                             <input
@@ -444,7 +432,7 @@
                     </tr>
 
                     <tr class="redskill">
-                        <td>スピードイーター（239）</td>
+                        <td>スピードイーター（<div class="display-scoreperskill">239</div>）</td>
                         <td nowrap>
                             <input id="skilleatercount" class="skillcount" />
                             <input

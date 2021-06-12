@@ -83,6 +83,11 @@ footer {
     text-align: center;
 }
 
+div.display-scoreperskill {
+    display: inline-block;
+    font-weight: bold;
+}
+
 #footer-dummy {
     height: 80px;
 }
