@@ -16,7 +16,7 @@ $(document).ready(() => {
         { passive: false }
     );
 
-    $("input[type='number']").on("change", (e) => {
+    $("input[type='number'], select").on("change", (e) => {
         let target = e.target;
         let value = Number(target.value);
         let max = target.getAttribute("max");
@@ -63,7 +63,7 @@ $(document).ready(() => {
 
 function refresh() {
     var totalscore = 0;
-    var totalskillcount = 1;
+    var totalskillcount = 1;    //1は固有の分
 
     //ステータス計算
     $(".param").each((i, e) => {
@@ -74,14 +74,15 @@ function refresh() {
 
     //スキル計算
     $(".skillcount").each((i, e) => {
-        let label = e.id.slice(0, -5);
+        let label = e.id.slice(0, -11);
         let score =
-            $("#" + label + "-perscore").val() * $("#" + label + "count").val();
-        $("#" + label + "score").html(score);
+            $("#" + label + "-scoreperskill").val() *
+            $("#" + label + "-skillcount").val();
+        $("#" + label + "-skillscore").html(score);
         totalscore += score;
 
-        if (label != "skillkoyu")
-            totalskillcount += Number($("#" + label + "count").val());
+        if (label != "koyu")
+            totalskillcount += Number($("#" + label + "-skillcount").val());
     });
 
     //ランク

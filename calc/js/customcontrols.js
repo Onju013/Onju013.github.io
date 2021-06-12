@@ -22,7 +22,7 @@ function initializeSkillControls() {
     $("input.skillcount").each((i, e) => {
         e.type = "number";
         e.step = 1;
-        if (e.id != "skillkoyucount") {
+        if (e.id != "koyu-skillcount") {
             e.value = 0;
             e.min = 0;
             e.max = 50;

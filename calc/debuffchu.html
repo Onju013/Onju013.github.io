@@ -71,7 +71,7 @@
                     <tr>
                         <td>才能</td>
                         <td>
-                            <select id="skillkoyu-perscore">
+                            <select id="koyu-scoreperskill">
                                 <option value="120">下位（★～★★）</option>
                                 <option selected value="170">
                                     上位（★★★～）
@@ -84,7 +84,7 @@
                         <td>
                             <input
                                 type="number"
-                                id="skillkoyucount"
+                                id="koyu-skillcount"
                                 step="1"
                                 min="1"
                                 max="6"
@@ -96,158 +96,169 @@
                     </tr>
                     <tr>
                         <td>個別評価</td>
-                        <td><div id="skillkoyuscore">680</div></td>
+                        <td><div id="koyu-skillscore">680</div></td>
                     </tr>
                 </table>
                 <br />
                 <table>
                     <tr>
                         <th>スキル（※条件に合った適正がA～S）</th>
+                        <th>評価</th>
                         <th>取得数</th>
                         <th nowrap>個別評価</th>
                     </tr>
                     <tr class="whiteskill">
-                        <td>他ウマ娘の固有スキル（<div class="display-scoreperskill">180</div>）</td>
+                        <td>他ウマ娘の固有スキル</td>
+                        <td>180</td>
                         <td nowrap>
-                            <input id="skillkoyukeicount" class="skillcount" />
+                            <input id="koyukei-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="180"
-                                id="skillkoyukei-perscore"
+                                id="koyukei-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkoyukeiscore" class="skillscore">
+                            <div id="koyukei-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>～～駆け引き（<div class="display-scoreperskill">174</div>）</td>
+                        <td>～～駆け引き</td>
+                        <td>174</td>
                         <td nowrap>
-                            <input id="skillkakecount" class="skillcount" />
+                            <input id="kake-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="174"
-                                id="skillkake-perscore"
+                                id="kake-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkakescore" class="skillscore">0</div>
+                            <div id="kake-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>～～けん制・焦り・ためらい（<div class="display-scoreperskill">217</div>）</td>
+                        <td>～～けん制・焦り・ためらい</td>
+                        <td>217</td>
                         <td nowrap>
-                            <input id="skillkencount" class="skillcount" />
+                            <input id="ken-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="217"
-                                id="skillken-perscore"
+                                id="ken-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkenscore" class="skillscore">0</div>
+                            <div id="ken-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>トリック（<div class="display-scoreperskill">217</div>）</td>
+                        <td>トリック</td>
+                        <td>217</td>
                         <td nowrap>
-                            <input id="skilltricount" class="skillcount" />
+                            <input id="tri-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="217"
-                                id="skilltri-perscore"
+                                id="tri-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skilltriscore" class="skillscore">0</div>
+                            <div id="tri-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>束縛・ささやき・鋭い眼光（<div class="display-scoreperskill">239</div>）</td>
+                        <td>束縛・ささやき・鋭い眼光</td>
+                        <td>239</td>
                         <td nowrap>
-                            <input id="skillsokucount" class="skillcount" />
+                            <input id="soku-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="239"
-                                id="skillsoku-perscore"
+                                id="soku-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillsokuscore" class="skillscore">0</div>
+                            <div id="soku-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="goldskill">
-                        <td>独占力・魅惑のささやき・八方にらみ（<div class="display-scoreperskill">559</div>）</td>
+                        <td>独占力・魅惑のささやき・八方にらみ</td>
+                        <td>559</td>
                         <td nowrap>
-                            <input id="skilldokucount" class="skillcount" />
+                            <input id="doku-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="559"
-                                id="skilldoku-perscore"
+                                id="doku-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skilldokuscore" class="skillscore">0</div>
+                            <div id="doku-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="redskill">
-                        <td>かく乱（<div class="display-scoreperskill">94</div>）</td>
+                        <td>かく乱</td>
+                        <td>94</td>
                         <td nowrap>
-                            <input id="skillkakucount" class="skillcount" />
+                            <input id="kaku-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="94"
-                                id="skillkaku-perscore"
+                                id="kaku-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkakuscore" class="skillscore">0</div>
+                            <div id="kaku-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="goldskill">
-                        <td>幻惑のかく乱（<div class="display-scoreperskill">367</div>）</td>
+                        <td>幻惑のかく乱</td>
+                        <td>367</td>
                         <td nowrap>
-                            <input id="skillgencount" class="skillcount" />
+                            <input id="gen-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="367"
-                                id="skillgen-perscore"
+                                id="gen-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillgenscore" class="skillscore">0</div>
+                            <div id="gen-skillscore" class="skillscore">0</div>
                         </td>
                     </tr>
                     <tr class="greenskill">
-                        <td>～～のコツ○（<div class="display-scoreperskill">191</div>）</td>
+                        <td>～～のコツ○</td>
+                        <td>191</td>
                         <td nowrap>
-                            <input id="skillkotsu1count" class="skillcount" />
+                            <input id="kotsu1-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="191"
-                                id="skillkotsu1-perscore"
+                                id="kotsu1-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkotsu1score" class="skillscore">
+                            <div id="kotsu1-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
                     </tr>
                     <tr class="greenskill">
-                        <td>～～のコツ◎（<div class="display-scoreperskill">239</div>）</td>
+                        <td>～～のコツ◎</td>
+                        <td>239</td>
                         <td nowrap>
-                            <input id="skillkotsu2count" class="skillcount" />
+                            <input id="kotsu2-skillcount" class="skillcount" />
                             <input
                                 type="hidden"
                                 value="239"
-                                id="skillkotsu2-perscore"
+                                id="kotsu2-scoreperskill"
                             />
                         </td>
                         <td>
-                            <div id="skillkotsu2score" class="skillscore">
+                            <div id="kotsu2-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
