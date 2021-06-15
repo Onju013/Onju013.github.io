@@ -11,7 +11,7 @@
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>ウマ娘評価値計算機 for ジェミニ杯デバフウマ娘</title>
+        <title>ウマ娘評価値計算機 for マイルデバフウマ娘</title>
 
         <style type="text/css"></style>
     </head>
@@ -19,7 +19,7 @@
         <main>
             <font size="+1pt"
                 ><b
-                    >オープンリーグウマ娘評価計算機<br />（ジェミニ杯デバフウマ娘用）</b
+                    >オープンリーグウマ娘評価計算機<br />（マイルデバフウマ娘用）</b
                 > </font
             ><br />
             <noscript
@@ -102,10 +102,9 @@
                 </table>
 
                 <br />
-                <font color="red"><b>※条件に合った適正がA～S</b></font>
                 <table>
                     <tr>
-                        <th>スキル</th>
+                        <th>スキル（※条件に合った適正がA～S）</th>
                         <th>評価</th>
                         <th>取得数</th>
                         <th nowrap>個別評価</th>
@@ -130,7 +129,7 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ○<br />右回り○<br />京都レース場○<br />根幹距離○<br />晴れの日○<br />良バ場○<br />一匹狼
+                            春ウマ○・左回り○・東京レース場○<br />根幹距離○・雨の日○・道悪○<br />一匹狼
                         </td>
                         <td
                             class="display-scoreperskill"
@@ -150,7 +149,7 @@
 
                     <tr class="greenskill">
                         <td>
-                            春ウマ◎<br />右回り◎<br />京都レース場◎<br />根幹距離◎<br />晴れの日◎<br />良バ場◎
+                            春ウマ◎・左回り◎・東京レース場◎<br />根幹距離◎・雨の日◎・道悪◎
                         </td>
                         <td
                             class="display-scoreperskill"
@@ -251,7 +250,7 @@
                     </tr>
 
                     <tr class="redskill">
-                        <td>スタミナイーター<br />リスタート</td>
+                        <td>スピードイーター・布石</td>
                         <td
                             class="display-scoreperskill"
                             id="eater-scoreperskill"
@@ -302,9 +301,8 @@
                             </div>
                         </td>
                     </tr>
-
                     <tr class="redskill">
-                        <td>かく乱<br />目くらまし</td>
+                        <td>かく乱</td>
                         <td
                             class="display-scoreperskill"
                             id="kaku1-scoreperskill"
@@ -321,7 +319,7 @@
                         </td>
                     </tr>
                     <tr class="goldskill">
-                        <td>幻惑のかく乱<br />奇術師</td>
+                        <td>幻惑のかく乱</td>
                         <td
                             class="display-scoreperskill"
                             id="kaku2-scoreperskill"
@@ -349,7 +347,44 @@
             <button id="load">JSONからロード</button>
             <br /><br />
 
-            <a href="..">戻る</a>
+            <b>緑スキル対応メモ</b>
+            <table>
+                <tr class="greenskill">
+                    <td>春ウマ娘</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>左回り</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>一匹狼</td>
+                    <td>スピード</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>根幹距離</td>
+                    <td>スタミナ</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>東京レース場</td>
+                    <td>スタミナ</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>道悪</td>
+                    <td>パワー</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>雨の日</td>
+                    <td>根性</td>
+                </tr>
+                <tr class="greenskill">
+                    <td>～のコツ</td>
+                    <td>賢さ</td>
+                </tr>
+            </table>
+
+            <br />
+            <a href="../..">戻る</a>
             <div id="footer-dummy"></div>
         </main>
 
