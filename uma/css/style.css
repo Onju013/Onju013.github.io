@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
 html {
     touch-action: manipulation;
 }
@@ -18,35 +8,22 @@ body {
     background-color: #f0f0f0;
 }
 
-button.skillcount-plusbutton,
-button.skillcount-minusbutton {
-    width: 28px;
-    height: 28px;
-    margin-left: 3pt;
-    margin-right: 3pt;
+img {
+    max-width: 100%;
 }
 
-input[type="number"],
-select {
-    font-size: 16pt;
-    transform: scale(0.95);
+figure {
+    width: fit-content;
 }
 
-input.param {
-    padding: 2px;
-    width: 50px;
+figure img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-input.skillcount {
-    width: 36px;
-}
-
-input#savestr {
-    max-width: 80%;
-}
-
-.skillscore {
-    text-align: right;
+figcaption {
+    text-align: center;
 }
 
 table {
@@ -68,45 +45,4 @@ td {
     border-width: 2px 1px;
     border-color: black;
     border-style: dotted;
-}
-
-main {
-    position: relative;
-}
-
-footer {
-    background-color: #a060a0;
-    color: white;
-
-    bottom: 0;
-    position: fixed;
-    text-align: center;
-}
-
-td.display-scoreperskill {
-    font-weight: bold;
-}
-
-#footer-dummy {
-    height: 80px;
-}
-
-.whiteskill {
-    background-color: #e0e0e0;
-}
-
-.redskill {
-    background-color: #ffa0a0;
-}
-
-.goldskill {
-    background-color: #f0f0a0;
-}
-
-.greenskill {
-    background-color: #a0f8a0;
-}
-
-.purpleskill {
-    background-color: #f0a0f0;
 }
