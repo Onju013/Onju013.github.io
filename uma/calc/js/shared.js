@@ -58,18 +58,41 @@ $(document).ready(() => {
         refresh();
     });
 
+    $("#urabutton").on("click", () => {
+        let target = $("div.ura");
+        console.log(target.css("display"));
+        if (target.css("display") == "none") {
+            target.css("display", "block");
+        } else {
+            target.css("display", "none");
+        }
+    });
+
     refresh();
 });
 
 function refresh() {
-    var totalscore = 0;
+    var statusscore = 0;
+    var urastatusscore = 0;
+    var skillscore = 0;
     var totalskillcount = 1; //1は固有の分
 
     //ステータス計算
-    $(".param").each((i, e) => {
+    $(".param:not(.ura)").each((i, e) => {
         let score = calcScore($("#" + e.id).val());
-        $("#" + e.name + "score").html(score);
-        totalscore += score;
+        $("#" + e.id + "score").html(score);
+        statusscore += score;
+    });
+
+    //URAステータス計算
+    $(".param.ura").each((i, e) => {
+        var basestatus = Number($("#" + e.id.slice(4)).val());
+        var urastatus = Number($("#ura-addstatus").val());
+        e.value = urastatus + basestatus;
+
+        let score = calcScore($("#" + e.id).val());
+        $("#" + e.id + "score").html(score);
+        urastatusscore += score;
     });
 
     //スキル計算
@@ -82,11 +105,15 @@ function refresh() {
 
         let score = scoreperskill * $("#" + label + "-skillcount").val();
         $("#" + label + "-skillscore").html(score);
-        totalscore += score;
+        skillscore += score;
 
         if (label != "koyu")
             totalskillcount += Number($("#" + label + "-skillcount").val());
     });
+
+    //集計
+    let totalscore = statusscore + skillscore;
+    let uratotalscore = urastatusscore + skillscore;
 
     //ランク
     let rank = "";
@@ -96,6 +123,7 @@ function refresh() {
 
     $("#result").html(totalscore + "（" + rank + "）");
     $("#totalskillcount").html(totalskillcount);
+    $("#ura-totalscore").html(uratotalscore);
 }
 
 function calcScore(param) {

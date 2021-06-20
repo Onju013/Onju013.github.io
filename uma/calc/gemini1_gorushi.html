@@ -69,6 +69,93 @@
                         <td><div id="smartscore" class="paramscore">1</div></td>
                     </tr>
                 </table>
+                <button type="button" id="urabutton">終盤調整</button>
+                <br />
+                <div class="ura">
+                    全体加算ステータス　
+                    <input type="number" id="ura-addstatus" value="60" width="30px" min="1"/>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>スピード</th>
+                            <th>スタミナ</th>
+                            <th>パワー</th>
+                            <th>根性</th>
+                            <th>賢さ</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input
+                                    id="ura-speed"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-stamina"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-power"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-guts"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-smart"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>個別評価</td>
+                            <td>
+                                <div id="ura-speedscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    id="ura-staminascore"
+                                    class="ura paramscore"
+                                >
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-powerscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-gutsscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-smartscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    評価点：<div id="ura-totalscore" style="display: inline;"></div>
+                </div>
+
                 <br />
                 <table>
                     <tr>

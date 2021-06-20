@@ -58,10 +58,8 @@ function initializeSkillControls() {
 
 //スマホ対応
 function initializePattern() {
-    $("input").each((i, e) => {
-        if (e.type == "number") {
-            e.pattern = "\\d*";
-        }
+    $("input[type=number]").each((i, e) => {
+        e.pattern = "\\d*";
     });
 }
 

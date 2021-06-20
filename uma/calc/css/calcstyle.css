@@ -23,7 +23,8 @@ select {
     transform: scale(0.95);
 }
 
-input.param {
+input.param,
+input#ura-addstatus {
     padding: 2px;
     width: 50px;
 }
@@ -79,4 +80,13 @@ td.display-scoreperskill {
 
 .purpleskill {
     background-color: #f0a0f0;
+}
+
+div.ura {
+    display: none;
+    background-color: #dddddd;
+}
+
+input.ura.param {
+    background-color: #e5e5e5;
 }
