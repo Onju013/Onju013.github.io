@@ -79,7 +79,7 @@ function refresh() {
 
     //ステータス計算
     $(".param:not(.ura)").each((i, e) => {
-        let score = calcScore($("#" + e.id).val());
+        let score = calcScore(e.value);
         $("#" + e.id + "score").html(score);
         statusscore += score;
     });
@@ -89,8 +89,9 @@ function refresh() {
         var basestatus = Number($("#" + e.id.slice(4)).val());
         var urastatus = Number($("#ura-addstatus").val());
         e.value = urastatus + basestatus;
+        if (e.value > 1200) e.value = 1200;
 
-        let score = calcScore($("#" + e.id).val());
+        let score = calcScore(e.value);
         $("#" + e.id + "score").html(score);
         urastatusscore += score;
     });
