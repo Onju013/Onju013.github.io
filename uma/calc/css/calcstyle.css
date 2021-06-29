@@ -90,3 +90,13 @@ div.ura {
 input.ura.param {
     background-color: #e5e5e5;
 }
+
+div.heal-skill {
+    display: inline;
+    color: blue;
+}
+
+div.bonus-status {
+    display: inline;
+    color: red;
+}
