@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(() => {
     initializeControls();
 
@@ -60,7 +62,6 @@ $(document).ready(() => {
 
     $("#urabutton").on("click", () => {
         let target = $("div.ura");
-        console.log(target.css("display"));
         if (target.css("display") == "none") {
             target.css("display", "block");
         } else {

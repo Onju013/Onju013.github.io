@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Onju" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="css/calcstyle.css" />
+        <title>ウマ娘評価値計算機</title>
+
+        <style type="text/css"></style>
+    </head>
+
+    <body>
+        <main>
+            <font size="+1pt"
+                ><b>オープンリーグウマ娘評価計算機<br /></b> </font
+            ><br />
+            <noscript
+                ><font color="red"
+                    ><b>JavaScriptの有効化が必須です</b></font
+                ></noscript
+            >
+            <br />
+            <form id="inputarea">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>スピード</th>
+                        <th>スタミナ</th>
+                        <th>パワー</th>
+                        <th>根性</th>
+                        <th>賢さ</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input id="speed" class="param" />
+                        </td>
+                        <td>
+                            <input id="stamina" class="param" />
+                        </td>
+                        <td>
+                            <input id="power" class="param" />
+                        </td>
+                        <td>
+                            <input id="guts" class="param" />
+                        </td>
+                        <td>
+                            <input id="smart" class="param" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>個別評価</td>
+                        <td><div id="speedscore" class="paramscore">1</div></td>
+                        <td>
+                            <div id="staminascore" class="paramscore">1</div>
+                        </td>
+                        <td><div id="powerscore" class="paramscore">1</div></td>
+                        <td><div id="gutsscore" class="paramscore">1</div></td>
+                        <td><div id="smartscore" class="paramscore">1</div></td>
+                    </tr>
+                </table>
+                <button type="button" id="urabutton">
+                    終盤調整（終盤の全ステータス上昇用）
+                </button>
+                <br />
+                <div class="ura">
+                    全体加算ステータス
+                    <input
+                        type="number"
+                        id="ura-addstatus"
+                        value="60"
+                        min="1"
+                    />
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>スピード</th>
+                            <th>スタミナ</th>
+                            <th>パワー</th>
+                            <th>根性</th>
+                            <th>賢さ</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input
+                                    id="ura-speed"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-stamina"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-power"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-guts"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    id="ura-smart"
+                                    class="ura param"
+                                    readonly
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>個別評価</td>
+                            <td>
+                                <div id="ura-speedscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    id="ura-staminascore"
+                                    class="ura paramscore"
+                                >
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-powerscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-gutsscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div id="ura-smartscore" class="ura paramscore">
+                                    1
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    評価点：
+                    <div id="ura-totalscore" style="display: inline"></div>
+                </div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td>才能</td>
+                        <td>
+                            <select id="koyu-scoreperskill">
+                                <option value="120">下位（★～★★）</option>
+                                <option selected value="170">
+                                    上位（★★★～）
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>固有スキルレベル</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="koyu-skillcount"
+                                step="1"
+                                min="1"
+                                max="6"
+                                value="4"
+                                class="skillcount"
+                            />
+                            <font color="red"><b>※選択し忘れやすい</b></font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>個別評価</td>
+                        <td><div id="koyu-skillscore">680</div></td>
+                    </tr>
+                </table>
+
+                <br />
+                <font color="red"><b>※条件に合った適正がA～S</b></font>
+                <table id="skill-table">
+                    <tr>
+                        <th>スキル</th>
+                        <th>評価</th>
+                        <th>取得数</th>
+                        <th nowrap>個別評価</th>
+                    </tr>
+                    <tr class="whiteskill">
+                        <td>他ウマ娘の固有スキル</td>
+                        <td
+                            class="display-scoreperskill"
+                            id="koyukei-scoreperskill"
+                        >
+                            180
+                        </td>
+                        <td nowrap>
+                            <input id="koyukei-skillcount" class="skillcount" />
+                        </td>
+                        <td>
+                            <div id="koyukei-skillscore" class="skillscore">
+                                0
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <button type="button" id="debug">hoge</button>
+
+            <br />
+            JSON（セーブを押して表示される文字列を保存しておけば復元できる）
+            <br />
+            <input type="text" id="savestr" size="60" />
+            <br />
+            <button id="save" style="margin-right: 15pt">JSONでセーブ</button>
+            <button id="load">JSONからロード</button>
+            <br /><br />
+
+            <a href="../..">戻る</a>
+            <div id="footer-dummy"></div>
+        </main>
+
+        <footer id="totalscore">
+            <table>
+                <tr>
+                    <td>評価点</td>
+                    <td>
+                        <font size="+3"> <div id="result">5</div></font>
+                    </td>
+                    <td>
+                        <div id="rank"></div>
+                    </td>
+                </tr>
+            </table>
+            取得スキル数：<span id="totalskillcount"></span>
+        </footer>
+
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+        ></script>
+        <script type="text/javascript" src="js/customcontrols.js"></script>
+        <script type="text/javascript" src="js/shared.js"></script>
+        <script type="text/javascript" src="js/skill.js"></script>
+        <script type="text/javascript">
+            $("button#debug").click(() => {
+                let s = new Skill("", "");
+                console.log(s);
+
+                let tr = document.createElement("tr");
+                let td = document.createElement("td");
+                td.innerText = "aa";
+                td.className = "goldskill aaa bbb";
+
+                //td.style = "display: none;";
+                tr.append(td);
+                $("#skill-table").append(tr);
+            });
+        </script>
+    </body>
+</html>

@@ -5,7 +5,7 @@
 //memo
 //  最終的にページ自体を自動生成する予定だから深く考えなくていいかも
 //
-
+"use strict"
 //ステータス
 function initializeParamControls() {
     $("input.param").each((i, e) => {
