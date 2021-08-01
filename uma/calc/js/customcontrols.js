@@ -5,13 +5,13 @@
 //memo
 //  最終的にページ自体を自動生成する予定だから深く考えなくていいかも
 //
-"use strict"
+"use strict";
 //ステータス
 function initializeParamControls() {
     $("input.param").each((i, e) => {
         e.type = "number";
         e.step = 1;
-        e.value = 400;
+        if (!e.value) e.value = 301;
         e.min = 1;
         e.max = 1200;
     });

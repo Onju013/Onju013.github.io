@@ -12,7 +12,7 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" href="css/calcstyle.css" />
-        <title>ウマ娘評価値計算機 for レオ杯 差し</title>
+        <title>ウマ娘評価値計算機 for レオ杯　追込</title>
 
         <style type="text/css"></style>
     </head>
@@ -21,7 +21,7 @@
         <main>
             <font size="+1pt"
                 ><b
-                    >オープンリーグウマ娘評価計算機<br />（レオ杯 差し）</b
+                    >オープンリーグウマ娘評価計算機<br />（レオ杯　追込用）</b
                 > </font
             ><br />
             <noscript
@@ -74,7 +74,7 @@
                 </button>
                 <br />
                 <div class="ura">
-                    全体加算ステータス
+                    全体加算ステータス　
                     <input
                         type="number"
                         id="ura-addstatus"
@@ -225,8 +225,24 @@
                         </td>
                     </tr>
 
+                    <tr class="purpleskill">
+                        <td>ゲート難</td>
+                        <td
+                            class="display-scoreperskill"
+                            id="bad1-scoreperskill"
+                        >
+                            -174
+                        </td>
+                        <td nowrap>
+                            <input id="bad1-skillcount" class="skillcount" />
+                        </td>
+                        <td>
+                            <div id="bad1-skillscore" class="skillscore">0</div>
+                        </td>
+                    </tr>
+
                     <tr class="greenskill">
-                        <td>差しのコツ○</td>
+                        <td>追込のコツ○</td>
                         <td
                             class="display-scoreperskill"
                             id="kotsu1-scoreperskill"
@@ -244,7 +260,7 @@
                     </tr>
 
                     <tr class="greenskill">
-                        <td>差しのコツ◎</td>
+                        <td>追込のコツ◎</td>
                         <td
                             class="display-scoreperskill"
                             id="kotsu1g-scoreperskill"
@@ -475,36 +491,39 @@
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>差し直線○<br />差しコーナー○</td>
+                        <td>追込直線○<br />追込コーナー○</td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi1-scoreperskill"
+                            id="oikomi1-scoreperskill"
                         >
                             239
                         </td>
                         <td nowrap>
-                            <input id="sashi1-skillcount" class="skillcount" />
+                            <input id="oikomi1-skillcount" class="skillcount" />
                         </td>
                         <td>
-                            <div id="sashi1-skillscore" class="skillscore">
+                            <div id="oikomi1-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>差し直線◎<br />差しコーナー◎</td>
+                        <td>追込直線◎<br />追込コーナー◎</td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi1g-scoreperskill"
+                            id="oikomi1g-scoreperskill"
                         >
                             288
                         </td>
                         <td nowrap>
-                            <input id="sashi1g-skillcount" class="skillcount" />
+                            <input
+                                id="oikomi1g-skillcount"
+                                class="skillcount"
+                            />
                         </td>
                         <td>
-                            <div id="sashi1g-skillscore" class="skillscore">
+                            <div id="oikomi1g-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
@@ -550,57 +569,24 @@
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>がんばり屋<br />十万バリキ</td>
+                        <td>
+                            <div class="heal-skill">下校の楽しみ</div>
+                            <br />
+                            <div class="heal-skill">後方待機</div>
+                            <br />直線一気<br />
+                            <div class="heal-skill">冷静</div>
+                        </td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi2-scoreperskill"
+                            id="oikomi3-scoreperskill"
                         >
                             239
                         </td>
                         <td nowrap>
-                            <input id="sashi2-skillcount" class="skillcount" />
+                            <input id="oikomi3-skillcount" class="skillcount" />
                         </td>
                         <td>
-                            <div id="sashi2-skillscore" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="goldskill">
-                        <td>努力家</td>
-                        <td
-                            class="display-scoreperskill"
-                            id="sashi2g-scoreperskill"
-                        >
-                            367
-                        </td>
-                        <td nowrap>
-                            <input id="sashi2g-skillcount" class="skillcount" />
-                        </td>
-                        <td>
-                            <div id="sashi2g-skillscore" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="whiteskill">
-                        <td>
-                            位置取り押し上げ<br />差し切り体勢<br />外差し準備<br />
-                            <div class="heal-skill">小休憩</div>
-                        </td>
-                        <td
-                            class="display-scoreperskill"
-                            id="sashi3-scoreperskill"
-                        >
-                            239
-                        </td>
-                        <td nowrap>
-                            <input id="sashi3-skillcount" class="skillcount" />
-                        </td>
-                        <td>
-                            <div id="sashi3-skillscore" class="skillscore">
+                            <div id="oikomi3-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
@@ -608,56 +594,64 @@
 
                     <tr class="goldskill">
                         <td>
-                            迅速果断<br />乗り換え上手<br />昇り龍<br />
-                            <div class="heal-skill">リラックス</div>
+                            <div class="heal-skill">下校後のスペシャリスト</div>
+                            <br />
+                            <div class="heal-skill">眠れる獅子</div>
+                            <br />迫る影
                         </td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi3g-scoreperskill"
+                            id="oikomi3g-scoreperskill"
                         >
                             559
                         </td>
                         <td nowrap>
-                            <input id="sashi3g-skillcount" class="skillcount" />
+                            <input
+                                id="oikomi3g-skillcount"
+                                class="skillcount"
+                            />
                         </td>
                         <td>
-                            <div id="sashi3g-skillscore" class="skillscore">
+                            <div id="oikomi3g-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
                     </tr>
 
                     <tr class="whiteskill">
-                        <td>読解力</td>
+                        <td>お見通し<br />策士</td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi4-scoreperskill"
+                            id="oikomi4-scoreperskill"
                         >
                             94
                         </td>
                         <td nowrap>
-                            <input id="sashi4-skillcount" class="skillcount" />
+                            <input id="oikomi4-skillcount" class="skillcount" />
                         </td>
                         <td>
-                            <div id="sashi4-skillscore" class="skillscore">
+                            <div id="oikomi4-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
                     </tr>
 
-                    <tr class="goldskill">
-                        <td>大局観</td>
+                    <tr class="whiteskill">
+                        <td>視界良好！異常なし！</td>
                         <td
                             class="display-scoreperskill"
-                            id="sashi4g-scoreperskill"
+                            id="oikomi4g-scoreperskill"
                         >
                             367
                         </td>
                         <td nowrap>
-                            <input id="sashi4g-skillcount" class="skillcount" />
+                            <input
+                                id="oikomi4g-skillcount"
+                                class="skillcount"
+                            />
                         </td>
                         <td>
-                            <div id="sashi4g-skillscore" class="skillscore">
+                            <div id="oikomi4g-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
@@ -742,48 +736,6 @@
                         </td>
                         <td>
                             <div id="d_general2-skillscore" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="redskill">
-                        <td>鋭い眼光</td>
-                        <td
-                            class="display-scoreperskill"
-                            id="d_sashi1-scoreperskill"
-                        >
-                            239
-                        </td>
-                        <td nowrap>
-                            <input
-                                id="d_sashi1-skillcount"
-                                class="skillcount"
-                            />
-                        </td>
-                        <td>
-                            <div id="d_sashi1-skillscore" class="skillscore">
-                                0
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="goldskill">
-                        <td>八方にらみ</td>
-                        <td
-                            class="display-scoreperskill"
-                            id="d_sashi1g-scoreperskill"
-                        >
-                            559
-                        </td>
-                        <td nowrap>
-                            <input
-                                id="d_sashi1g-skillcount"
-                                class="skillcount"
-                            />
-                        </td>
-                        <td>
-                            <div id="d_sashi1g-skillscore" class="skillscore">
                                 0
                             </div>
                         </td>
