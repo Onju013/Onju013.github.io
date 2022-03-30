@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+button.skillcount-plusbutton,
+button.skillcount-minusbutton {
+    width: 28px;
+    height: 28px;
+    margin-left: 3pt;
+    margin-right: 3pt;
+}
+
+input[type="number"],
+select {
+    font-size: 16pt;
+    transform: scale(0.95);
+}
+
+input.param,
+input#ura-addstatus {
+    padding: 2px;
+    width: 50px;
+}
+
+input.skillcount {
+    width: 36px;
+}
+
+input#savestr {
+    max-width: 80%;
+}
+
+.skillscore {
+    text-align: right;
+}
+
+main {
+    position: relative;
+}
+
+footer {
+    background-color: #a060a0;
+    color: white;
+
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
+td.display-scoreperskill {
+    font-weight: bold;
+}
+
+#footer-dummy {
+    height: 80px;
+}
+
+.whiteskill {
+    background-color: #e0e0e0;
+}
+
+.redskill {
+    background-color: #ffa0a0;
+}
+
+.goldskill {
+    background-color: #f0f0a0;
+}
+
+.greenskill {
+    background-color: #a0f8a0;
+}
+
+.purpleskill {
+    background-color: #f0a0f0;
+}
+
+div.ura {
+    display: none;
+    background-color: #dddddd;
+}
+
+input.ura.param {
+    background-color: #e5e5e5;
+}
+
+div.heal-skill {
+    display: inline;
+    color: blue;
+}
+
+div.bonus-status {
+    display: inline;
+    color: red;
+}
